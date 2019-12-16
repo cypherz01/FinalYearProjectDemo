@@ -19,7 +19,7 @@ namespace FinalYearProjectDemo
             InitializeComponent();
 
             Timer timer = new Timer();
-            timer.Interval = (1 * 1000); // 10 secs
+            timer.Interval = (1 * 750); // 0.75 seconds
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
 
@@ -49,7 +49,7 @@ namespace FinalYearProjectDemo
             button8.Text = "space";
 
             layoutNum = 1;
-            highlightNum = 2;
+            highlightNum = 1;
             panel1.Visible = true;
             panel1.Top = button2.Top + 10;
             panel1.Left = button2.Left + 10;
@@ -64,58 +64,67 @@ namespace FinalYearProjectDemo
             switch (highlightNum)
             {
                 case 1:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button1.Height;
-                    panel1.Top = button9.Top+10;
-                    panel1.Left = button9.Left+10;
+                    panel1.Top = button1.Top+10;
+                    panel1.Left = button1.Left+10;
                     break;
                 case 2:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button2.Height;
                     panel1.Top = button2.Top+10;
                     panel1.Left = button2.Left+10;
                     break;
                 case 3:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button3.Height;
                     panel1.Top = button3.Top+10;
                     panel1.Left = button3.Left+10;
                     break;
                 case 4:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button4.Height;
                     panel1.Top = button4.Top+10;
                     panel1.Left = button4.Left+10;
                     break;
                 case 5:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button5.Height;
                     panel1.Top = button5.Top+10;
                     panel1.Left = button5.Left+10;
                     break;
                 case 6:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button6.Height;
                     panel1.Top = button6.Top+10;
                     panel1.Left = button6.Left+10;
                     break;
                 case 7:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button7.Height;
                     panel1.Top = button7.Top+10;
                     panel1.Left = button7.Left+10;
                     break;
                 case 8:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button8.Height;
                     panel1.Top = button8.Top+10;
                     panel1.Left = button8.Left+10;
                     break;
                 case 0:
+                    panel1.BackColor = Color.Red;
                     highlightNum = (highlightNum + 1) % 9;
                     panel1.Height = button9.Height;
-                    panel1.Top = button1.Top+10;
-                    panel1.Left = button1.Left+10;
+                    panel1.Top = button9.Top+10;
+                    panel1.Left = button9.Left+10;
                     break;
 
 
@@ -276,6 +285,18 @@ namespace FinalYearProjectDemo
             button8.Visible = false;
         }
 
+        private void Layout13()
+        {
+            button1.Text = "Return";
+            button2.Text = "!";
+            button3.Text = "?";
+            button4.Text = ".";
+            button5.Text = "*";
+            button6.Text = "/";
+            button7.Text = "\\";
+            button8.Text = "space";
+        }
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -334,6 +355,9 @@ namespace FinalYearProjectDemo
                 case 12:
                     textBox1.Text += "8";
                     break;
+                case 13:
+                    textBox1.Text += "!";
+                    break;
 
 
             }
@@ -384,6 +408,9 @@ namespace FinalYearProjectDemo
                 case 12:
                     textBox1.Text += "9";
                     break;
+                case 13:
+                    textBox1.Text += "?";
+                    break;
 
 
             }
@@ -415,7 +442,10 @@ namespace FinalYearProjectDemo
                     layoutNum = 10;
                     Layout10();
                     break;
-              
+                case 13:
+                    textBox1.Text += ".";
+                    break;
+
             }
 
         }
@@ -443,6 +473,9 @@ namespace FinalYearProjectDemo
                 case 7:
                     layoutNum = 11;
                     Layout11();
+                    break;
+                case 13:
+                    textBox1.Text += "*";
                     break;
             }
 
@@ -474,6 +507,9 @@ namespace FinalYearProjectDemo
                     layoutNum = 12;
                     Layout12();
                     break;
+                case 13:
+                    textBox1.Text += "/";
+                    break;
 
             }
         }
@@ -499,6 +535,13 @@ namespace FinalYearProjectDemo
                 case 5:
                     textBox1.Text += "X";
                     break;
+                case 7:
+                    layoutNum = 13;
+                    Layout13();
+                    break;
+                case 13:
+                    textBox1.Text += "\\";
+                    break;
 
             }
 
@@ -509,7 +552,82 @@ namespace FinalYearProjectDemo
         {
             if (e.KeyCode == Keys.M)
             {
-                textBox1.Text = "YAAAASSS";
+                switch (highlightNum)
+            {
+                case 2:
+                        panel1.BackColor = Color.Yellow;
+                        Button1_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 3:
+                        panel1.BackColor = Color.Yellow;
+                        Button2_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 4:
+                        panel1.BackColor = Color.Yellow;
+                        Button3_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 5:
+                        panel1.BackColor = Color.Yellow;
+                        Button4_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 6:
+                        panel1.BackColor = Color.Yellow;
+                        Button5_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 7:
+                        panel1.BackColor = Color.Yellow;
+                        Button6_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 8:
+                        panel1.BackColor = Color.Yellow;
+                        Button7_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 0:
+                        panel1.BackColor = Color.Yellow;
+                        Button8_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+                case 1:
+                        panel1.BackColor = Color.Yellow;
+                        Button9_Click(sender, e);
+                        highlightNum = 1;
+                        break;
+
+
+            }
+            }
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += " ";
+
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            layoutNum = 9;
+        }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                panel1.Visible = true;
+                KeyPreview = true;
+
+            }
+            else
+            {
+                panel1.Visible = false;
+                KeyPreview = false;
             }
         }
     }

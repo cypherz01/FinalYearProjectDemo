@@ -45,11 +45,14 @@ namespace FinalYearProjectDemo
             this.button9 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(283, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 80);
@@ -61,6 +64,7 @@ namespace FinalYearProjectDemo
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(516, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 80);
@@ -72,6 +76,7 @@ namespace FinalYearProjectDemo
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(673, 137);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 80);
@@ -83,6 +88,7 @@ namespace FinalYearProjectDemo
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(673, 357);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(140, 80);
@@ -94,6 +100,7 @@ namespace FinalYearProjectDemo
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(516, 488);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(140, 80);
@@ -105,6 +112,7 @@ namespace FinalYearProjectDemo
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(283, 488);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(140, 80);
@@ -116,6 +124,7 @@ namespace FinalYearProjectDemo
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(171, 357);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(140, 80);
@@ -126,12 +135,14 @@ namespace FinalYearProjectDemo
             // 
             // button8
             // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Location = new System.Drawing.Point(171, 169);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(140, 80);
             this.button8.TabIndex = 7;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // button9
             // 
@@ -141,12 +152,14 @@ namespace FinalYearProjectDemo
             this.button9.TabIndex = 8;
             this.button9.Text = "button9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(433, 200);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(386, 169);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(182, 26);
             this.textBox1.TabIndex = 9;
             // 
             // panel1
@@ -157,11 +170,36 @@ namespace FinalYearProjectDemo
             this.panel1.Size = new System.Drawing.Size(140, 18);
             this.panel1.TabIndex = 10;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(803, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(91, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Binary Search";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(803, 35);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(81, 17);
+            this.radioButton2.TabIndex = 11;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Eyetracking";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 919);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button9);
@@ -200,6 +238,8 @@ namespace FinalYearProjectDemo
         private Button button9;
         private TextBox textBox1;
         private Panel panel1;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
     }
       
 }
