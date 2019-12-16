@@ -45,36 +45,6 @@ namespace FinalYearProjectDemo
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-            if (layoutNum == 1)
-            {
-                layoutNum = 2;
-                Layout2();
-            }
-            else if (layoutNum == 2)
-                {
-                textBox1.Text = "A";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "G";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "M";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "S";
-            }
-            else if (layoutNum == 6)
-            {
-                textBox1.Text = "Y";
-            }
-
-        }
 
         private void Layout1()
         {
@@ -97,7 +67,7 @@ namespace FinalYearProjectDemo
         private void Layout2()
         {
             button1.Text = "Return";
-            button2.Text = "A ";
+            button2.Text = "A";
             button3.Text = "B";
             button4.Text = "C";
             button5.Text = "D";
@@ -109,7 +79,7 @@ namespace FinalYearProjectDemo
         private void Layout3()
         {
             button1.Text = "Return";
-            button2.Text = "G ";
+            button2.Text = "G";
             button3.Text = "H";
             button4.Text = "I";
             button5.Text = "J";
@@ -121,7 +91,7 @@ namespace FinalYearProjectDemo
         private void Layout4()
         {
             button1.Text = "Return";
-            button2.Text = "M ";
+            button2.Text = "M";
             button3.Text = "N";
             button4.Text = "O";
             button5.Text = "P";
@@ -133,7 +103,7 @@ namespace FinalYearProjectDemo
         private void Layout5()
         {
             button1.Text = "Return";
-            button2.Text = "S ";
+            button2.Text = "S";
             button3.Text = "T";
             button4.Text = "U";
             button5.Text = "V";
@@ -145,7 +115,7 @@ namespace FinalYearProjectDemo
         private void Layout6()
         {
             button1.Text = "Return";
-            button2.Text = "Y ";
+            button2.Text = "Y";
             button3.Text = "Z";
             button4.Visible = false;
             button5.Visible = false;
@@ -154,114 +124,78 @@ namespace FinalYearProjectDemo
             button8.Visible = false;
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void Layout7()
         {
-            if (layoutNum == 1)
-            {
-                layoutNum = 3;
-                Layout3();
-            }
-            else if (layoutNum == 2)
-            {
-                textBox1.Text = "B";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "H";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "N";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "T";
-            }
-            else if (layoutNum == 6)
-            {
-                textBox1.Text = "Z";
-            }
-
+            button1.Text = "Return";
+            button2.Text = "0 1";
+            button3.Text = "2 3";
+            button4.Text = "4 5";
+            button5.Text = "6 7";
+            button6.Text = "8 9";
+            button7.Text = "! ? . * ...";
+            button8.Text = "space";
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void Layout8()
         {
-            if (layoutNum == 1)
-            {
-                layoutNum = 4;
-                Layout4();
-            }
-            else if (layoutNum == 2)
-            {
-                textBox1.Text = "C";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "I";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "O";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "U";
-            }
-
+            button1.Text = "Return";
+            button2.Text = "0";
+            button3.Text = "1";
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void Layout9()
         {
-            if (layoutNum == 1)
-            {
-                layoutNum = 5;
-                Layout5();
-            }
-            else if (layoutNum == 2)
-            {
-                textBox1.Text = "D";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "J";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "P";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "V";
-            }
-
+            button1.Text = "Return";
+            button2.Text = "2";
+            button3.Text = "3";
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
         }
 
-        private void Button6_Click(object sender, EventArgs e)
+        private void Layout10()
         {
-            if (layoutNum == 1)
-            {
-                layoutNum = 6;
-                Layout6();
-            }
-            else if (layoutNum == 2)
-            {
-                textBox1.Text = "E";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "K";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "Q";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "W";
-            }
-
-
+            button1.Text = "Return";
+            button2.Text = "4";
+            button3.Text = "5";
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
         }
+
+        private void Layout11()
+        {
+            button1.Text = "Return";
+            button2.Text = "6";
+            button3.Text = "7";
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
+        }
+
+        private void Layout12()
+        {
+            button1.Text = "Return";
+            button2.Text = "8";
+            button3.Text = "9";
+            button4.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
+            button7.Visible = false;
+            button8.Visible = false;
+        }
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -277,28 +211,217 @@ namespace FinalYearProjectDemo
             }
         }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+            switch (layoutNum)
+            {
+                case 1:
+                    layoutNum = 2;
+                    Layout2();
+                    break;
+                case 2:
+                    textBox1.Text += "A";
+                    break;
+                case 3:
+                    textBox1.Text += "G";
+                    break;
+                case 4:
+                    textBox1.Text += "M";
+                    break;
+                case 5:
+                    textBox1.Text += "S";
+                    break;
+                case 6:
+                    textBox1.Text += "Y";
+                    break;
+                case 7:
+                    layoutNum = 8;
+                    Layout8();
+                    break;
+                case 8:
+                    textBox1.Text += "0";
+                    break;
+                case 9:
+                    textBox1.Text += "2";
+                    break;
+                case 10:
+                    textBox1.Text += "4";
+                    break;
+                case 11:
+                    textBox1.Text += "6";
+                    break;
+                case 12:
+                    textBox1.Text += "8";
+                    break;
+
+
+            }
+
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+            switch (layoutNum)
+            {
+                case 1:
+                    layoutNum = 3;
+                    Layout3();
+                    break;
+                case 2:
+                    textBox1.Text += "B";
+                    break;
+                case 3:
+                    textBox1.Text += "H";
+                    break;
+                case 4:
+                    textBox1.Text += "N";
+                    break;
+                case 5:
+                    textBox1.Text += "T";
+                    break;
+                case 6:
+                    textBox1.Text += "Z";
+                    break;
+                case 7:
+                    layoutNum = 9;
+                    Layout9();
+                    break;
+                case 8:
+                    textBox1.Text += "1";
+                    break;
+                case 9:
+                    textBox1.Text += "3";
+                    break;
+                case 10:
+                    textBox1.Text += "5";
+                    break;
+                case 11:
+                    textBox1.Text += "7";
+                    break;
+                case 12:
+                    textBox1.Text += "9";
+                    break;
+
+
+            }
+
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            switch (layoutNum)
+            {
+                case 1:
+                    layoutNum = 4;
+                    Layout4();
+                    break;
+                case 2:
+                    textBox1.Text += "C";
+                    break;
+                case 3:
+                    textBox1.Text += "I";
+                    break;
+                case 4:
+                    textBox1.Text += "O";
+                    break;
+                case 5:
+                    textBox1.Text += "U";
+                    break;
+                case 7:
+                    layoutNum = 10;
+                    Layout10();
+                    break;
+              
+            }
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            switch (layoutNum)
+            {
+                case 1:
+                    layoutNum = 5;
+                    Layout5();
+                    break;
+                case 2:
+                    textBox1.Text += "D";
+                    break;
+                case 3:
+                    textBox1.Text += "J";
+                    break;
+                case 4:
+                    textBox1.Text += "P";
+                    break;
+                case 5:
+                    textBox1.Text += "V";
+                    break;
+                case 7:
+                    layoutNum = 11;
+                    Layout11();
+                    break;
+            }
+
+
+
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            switch (layoutNum)
+            {
+                case 1:
+                    layoutNum = 6;
+                    Layout6();
+                    break;
+                case 2:
+                    textBox1.Text += "E";
+                    break;
+                case 3:
+                    textBox1.Text += "K";
+                    break;
+                case 4:
+                    textBox1.Text += "Q";
+                    break;
+                case 5:
+                    textBox1.Text += "W";
+                    break;
+                case 7:
+                    layoutNum = 12;
+                    Layout12();
+                    break;
+
+            }
+        }
+
+
         private void Button7_Click(object sender, EventArgs e)
         {
-            if(layoutNum == 1)
+            switch (layoutNum)
             {
-                
+                case 1:
+                    layoutNum = 7;
+                    Layout7();
+                    break;
+                case 2:
+                    textBox1.Text += "F";
+                    break;
+                case 3:
+                    textBox1.Text += "L";
+                    break;
+                case 4:
+                    textBox1.Text += "R";
+                    break;
+                case 5:
+                    textBox1.Text += "X";
+                    break;
+
             }
-            else if (layoutNum == 2)
-            {
-                textBox1.Text = "F";
-            }
-            else if (layoutNum == 3)
-            {
-                textBox1.Text = "L";
-            }
-            else if (layoutNum == 4)
-            {
-                textBox1.Text = "R";
-            }
-            else if (layoutNum == 5)
-            {
-                textBox1.Text = "X";
-            }
+
 
         }
     }
