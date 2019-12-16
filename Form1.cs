@@ -13,9 +13,16 @@ namespace FinalYearProjectDemo
     public partial class Form1 : Form
     {
         private int layoutNum;
+        private int highlightNum;
         public Form1()
         {
             InitializeComponent();
+
+            Timer timer = new Timer();
+            timer.Interval = (1 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
 
             // StartPosition was set to FormStartPosition.Manual in the properties window.
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
@@ -42,6 +49,79 @@ namespace FinalYearProjectDemo
             button8.Text = "space";
 
             layoutNum = 1;
+            highlightNum = 2;
+            panel1.Visible = true;
+            panel1.Top = button2.Top + 10;
+            panel1.Left = button2.Left + 10;
+            panel1.Height = button2.Height;
+            panel1.SendToBack();
+           
+
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            switch (highlightNum)
+            {
+                case 1:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button1.Height;
+                    panel1.Top = button9.Top+10;
+                    panel1.Left = button9.Left+10;
+                    break;
+                case 2:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button2.Height;
+                    panel1.Top = button2.Top+10;
+                    panel1.Left = button2.Left+10;
+                    break;
+                case 3:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button3.Height;
+                    panel1.Top = button3.Top+10;
+                    panel1.Left = button3.Left+10;
+                    break;
+                case 4:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button4.Height;
+                    panel1.Top = button4.Top+10;
+                    panel1.Left = button4.Left+10;
+                    break;
+                case 5:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button5.Height;
+                    panel1.Top = button5.Top+10;
+                    panel1.Left = button5.Left+10;
+                    break;
+                case 6:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button6.Height;
+                    panel1.Top = button6.Top+10;
+                    panel1.Left = button6.Left+10;
+                    break;
+                case 7:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button7.Height;
+                    panel1.Top = button7.Top+10;
+                    panel1.Left = button7.Left+10;
+                    break;
+                case 8:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button8.Height;
+                    panel1.Top = button8.Top+10;
+                    panel1.Left = button8.Left+10;
+                    break;
+                case 0:
+                    highlightNum = (highlightNum + 1) % 9;
+                    panel1.Height = button9.Height;
+                    panel1.Top = button1.Top+10;
+                    panel1.Left = button1.Left+10;
+                    break;
+
+
+
+
+            }
 
         }
 
@@ -423,6 +503,14 @@ namespace FinalYearProjectDemo
             }
 
 
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.M)
+            {
+                textBox1.Text = "YAAAASSS";
+            }
         }
     }
 }
