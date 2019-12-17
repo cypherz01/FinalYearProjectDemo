@@ -61,75 +61,114 @@ namespace FinalYearProjectDemo
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            switch (highlightNum)
+            if ((layoutNum == 6) || (layoutNum == 8) || (layoutNum == 9) || (layoutNum == 10)
+                || (layoutNum == 11) || (layoutNum == 12))
             {
-                case 1:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button1.Height;
-                    panel1.Top = button1.Top+10;
-                    panel1.Left = button1.Left+10;
-                    break;
-                case 2:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button2.Height;
-                    panel1.Top = button2.Top+10;
-                    panel1.Left = button2.Left+10;
-                    break;
-                case 3:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button3.Height;
-                    panel1.Top = button3.Top+10;
-                    panel1.Left = button3.Left+10;
-                    break;
-                case 4:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button4.Height;
-                    panel1.Top = button4.Top+10;
-                    panel1.Left = button4.Left+10;
-                    break;
-                case 5:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button5.Height;
-                    panel1.Top = button5.Top+10;
-                    panel1.Left = button5.Left+10;
-                    break;
-                case 6:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button6.Height;
-                    panel1.Top = button6.Top+10;
-                    panel1.Left = button6.Left+10;
-                    break;
-                case 7:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button7.Height;
-                    panel1.Top = button7.Top+10;
-                    panel1.Left = button7.Left+10;
-                    break;
-                case 8:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button8.Height;
-                    panel1.Top = button8.Top+10;
-                    panel1.Left = button8.Left+10;
-                    break;
-                case 0:
-                    panel1.BackColor = Color.Red;
-                    highlightNum = (highlightNum + 1) % 9;
-                    panel1.Height = button9.Height;
-                    panel1.Top = button9.Top+10;
-                    panel1.Left = button9.Left+10;
-                    break;
+                switch (highlightNum)
+                {
+                    case 1:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button1.Height;
+                        panel1.Top = button1.Top + 10;
+                        panel1.Left = button1.Left + 10;
+                        break;
+                    case 2:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button2.Height;
+                        panel1.Top = button2.Top + 10;
+                        panel1.Left = button2.Left + 10;
+                        break;
+                    case 3:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button3.Height;
+                        panel1.Top = button3.Top + 10;
+                        panel1.Left = button3.Left + 10;
+                        break;
+                    case 4:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = 1;
+                        panel1.Height = button9.Height;
+                        panel1.Top = button9.Top + 10;
+                        panel1.Left = button9.Left + 10;
+                        break;
+
+                }
+            }
+            else
+            {
+                switch (highlightNum)
+                {
+                    case 1:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button1.Height;
+                        panel1.Top = button1.Top + 10;
+                        panel1.Left = button1.Left + 10;
+                        break;
+                    case 2:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button2.Height;
+                        panel1.Top = button2.Top + 10;
+                        panel1.Left = button2.Left + 10;
+                        break;
+                    case 3:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button3.Height;
+                        panel1.Top = button3.Top + 10;
+                        panel1.Left = button3.Left + 10;
+                        break;
+                    case 4:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button4.Height;
+                        panel1.Top = button4.Top + 10;
+                        panel1.Left = button4.Left + 10;
+                        break;
+                    case 5:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button5.Height;
+                        panel1.Top = button5.Top + 10;
+                        panel1.Left = button5.Left + 10;
+                        break;
+                    case 6:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button6.Height;
+                        panel1.Top = button6.Top + 10;
+                        panel1.Left = button6.Left + 10;
+                        break;
+                    case 7:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button7.Height;
+                        panel1.Top = button7.Top + 10;
+                        panel1.Left = button7.Left + 10;
+                        break;
+                    case 8:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button8.Height;
+                        panel1.Top = button8.Top + 10;
+                        panel1.Left = button8.Left + 10;
+                        break;
+                    case 0:
+                        panel1.BackColor = Color.Red;
+                        highlightNum = (highlightNum + 1) % 9;
+                        panel1.Height = button9.Height;
+                        panel1.Top = button9.Top + 10;
+                        panel1.Left = button9.Left + 10;
+                        break;
 
 
 
 
+                }
             }
 
         }
@@ -613,7 +652,7 @@ namespace FinalYearProjectDemo
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            layoutNum = 9;
+            textBox1.Text = "";
         }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)

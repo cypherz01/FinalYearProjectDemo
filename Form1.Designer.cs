@@ -146,11 +146,12 @@ namespace FinalYearProjectDemo
             // 
             // button9
             // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Location = new System.Drawing.Point(416, 259);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(140, 80);
             this.button9.TabIndex = 8;
-            this.button9.Text = "button9";
+            this.button9.Text = "clear";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
