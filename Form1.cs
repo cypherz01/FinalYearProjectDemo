@@ -14,6 +14,7 @@ namespace FinalYearProjectDemo
     {
         private int layoutNum;
         private int highlightNum;
+        private Boolean canClick;
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace FinalYearProjectDemo
 
             layoutNum = 1;
             highlightNum = 1;
+            canClick = true;
             panel1.Visible = true;
             panel1.Top = button2.Top + 10;
             panel1.Left = button2.Left + 10;
@@ -67,6 +69,7 @@ namespace FinalYearProjectDemo
                 switch (highlightNum)
                 {
                     case 1:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button1.Height;
@@ -74,6 +77,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button1.Left + 10;
                         break;
                     case 2:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button2.Height;
@@ -81,6 +85,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button2.Left + 10;
                         break;
                     case 3:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button3.Height;
@@ -88,6 +93,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button3.Left + 10;
                         break;
                     case 4:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = 1;
                         panel1.Height = button9.Height;
@@ -102,6 +108,7 @@ namespace FinalYearProjectDemo
                 switch (highlightNum)
                 {
                     case 1:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button1.Height;
@@ -109,6 +116,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button1.Left + 10;
                         break;
                     case 2:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button2.Height;
@@ -116,6 +124,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button2.Left + 10;
                         break;
                     case 3:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button3.Height;
@@ -123,6 +132,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button3.Left + 10;
                         break;
                     case 4:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button4.Height;
@@ -130,6 +140,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button4.Left + 10;
                         break;
                     case 5:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button5.Height;
@@ -137,6 +148,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button5.Left + 10;
                         break;
                     case 6:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button6.Height;
@@ -144,6 +156,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button6.Left + 10;
                         break;
                     case 7:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button7.Height;
@@ -151,6 +164,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button7.Left + 10;
                         break;
                     case 8:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button8.Height;
@@ -158,6 +172,7 @@ namespace FinalYearProjectDemo
                         panel1.Left = button8.Left + 10;
                         break;
                     case 0:
+                        canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
                         panel1.Height = button9.Height;
@@ -589,7 +604,7 @@ namespace FinalYearProjectDemo
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.M)
+            if ((e.KeyCode == Keys.M)&&(canClick))
             {
                 switch (highlightNum)
             {
@@ -597,46 +612,55 @@ namespace FinalYearProjectDemo
                         panel1.BackColor = Color.Yellow;
                         Button1_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 3:
                         panel1.BackColor = Color.Yellow;
                         Button2_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 4:
                         panel1.BackColor = Color.Yellow;
                         Button3_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 5:
                         panel1.BackColor = Color.Yellow;
                         Button4_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 6:
                         panel1.BackColor = Color.Yellow;
                         Button5_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 7:
                         panel1.BackColor = Color.Yellow;
                         Button6_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 8:
                         panel1.BackColor = Color.Yellow;
                         Button7_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 0:
                         panel1.BackColor = Color.Yellow;
                         Button8_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
                 case 1:
                         panel1.BackColor = Color.Yellow;
                         Button9_Click(sender, e);
                         highlightNum = 1;
+                        canClick = false;
                         break;
 
 
