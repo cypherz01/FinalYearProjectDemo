@@ -12,6 +12,16 @@ namespace FinalYearProjectDemo
 {
     public partial class Form1 : Form
     {
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams param = base.CreateParams;
+                param.ExStyle |= 0x08000000;
+                return param;
+            }
+        }
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
@@ -376,7 +386,7 @@ namespace FinalYearProjectDemo
                     Layout2();
                     break;
                 case 2:
-                    textBox1.Text += "A";
+                    SendKeys.Send("A");
                     break;
                 case 3:
                     textBox1.Text += "G";
