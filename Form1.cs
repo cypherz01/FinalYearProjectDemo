@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,18 @@ namespace FinalYearProjectDemo
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
+        private string[] Words;
         public Form1()
         {
             InitializeComponent();
+
+           /* Words = File.ReadAllLines("C:\\words\\words.txt");
+            for (int i = 0; i < Words.Length; i++)
+            {
+                textBox1.AutoCompleteCustomSource.Add(Words[i]);
+            }
+            */
+
 
             Timer timer = new Timer();
             timer.Interval = (1 * 750); // 0.75 seconds
@@ -387,40 +397,41 @@ namespace FinalYearProjectDemo
                     break;
                 case 2:
                     SendKeys.Send("A");
+                    textBox1.Text += ("A");
                     break;
                 case 3:
-                    textBox1.Text += "G";
+                    SendKeys.Send("G");
                     break;
                 case 4:
-                    textBox1.Text += "M";
+                    SendKeys.Send("M");
                     break;
                 case 5:
-                    textBox1.Text += "S";
+                    SendKeys.Send("S");
                     break;
                 case 6:
-                    textBox1.Text += "Y";
+                    SendKeys.Send("Y");
                     break;
                 case 7:
                     layoutNum = 8;
                     Layout8();
                     break;
                 case 8:
-                    textBox1.Text += "0";
+                    SendKeys.Send("0");
                     break;
                 case 9:
-                    textBox1.Text += "2";
+                    SendKeys.Send("2");
                     break;
                 case 10:
-                    textBox1.Text += "4";
+                    SendKeys.Send("4");
                     break;
                 case 11:
-                    textBox1.Text += "6";
+                    SendKeys.Send("6");
                     break;
                 case 12:
-                    textBox1.Text += "8";
+                    SendKeys.Send("8");
                     break;
                 case 13:
-                    textBox1.Text += "!";
+                    SendKeys.Send("!");
                     break;
 
 
@@ -439,41 +450,41 @@ namespace FinalYearProjectDemo
                     Layout3();
                     break;
                 case 2:
-                    textBox1.Text += "B";
+                    SendKeys.Send("B");
                     break;
                 case 3:
-                    textBox1.Text += "H";
+                    SendKeys.Send("H");
                     break;
                 case 4:
-                    textBox1.Text += "N";
+                    SendKeys.Send("N");
                     break;
                 case 5:
-                    textBox1.Text += "T";
+                    SendKeys.Send("T");
                     break;
                 case 6:
-                    textBox1.Text += "Z";
+                    SendKeys.Send("Z");
                     break;
                 case 7:
                     layoutNum = 9;
                     Layout9();
                     break;
                 case 8:
-                    textBox1.Text += "1";
+                    SendKeys.Send("1");
                     break;
                 case 9:
-                    textBox1.Text += "3";
+                    SendKeys.Send("3");
                     break;
                 case 10:
-                    textBox1.Text += "5";
+                    SendKeys.Send("5");
                     break;
                 case 11:
-                    textBox1.Text += "7";
+                    SendKeys.Send("7");
                     break;
                 case 12:
-                    textBox1.Text += "9";
+                    SendKeys.Send("9");
                     break;
                 case 13:
-                    textBox1.Text += "?";
+                    SendKeys.Send("?");
                     break;
 
 
@@ -491,23 +502,23 @@ namespace FinalYearProjectDemo
                     Layout4();
                     break;
                 case 2:
-                    textBox1.Text += "C";
+                    SendKeys.Send("C");
                     break;
                 case 3:
-                    textBox1.Text += "I";
+                    SendKeys.Send("I");
                     break;
                 case 4:
-                    textBox1.Text += "O";
+                    SendKeys.Send("O");
                     break;
                 case 5:
-                    textBox1.Text += "U";
+                    SendKeys.Send("U");
                     break;
                 case 7:
                     layoutNum = 10;
                     Layout10();
                     break;
                 case 13:
-                    textBox1.Text += ".";
+                    SendKeys.Send(".");
                     break;
 
             }
@@ -523,23 +534,23 @@ namespace FinalYearProjectDemo
                     Layout5();
                     break;
                 case 2:
-                    textBox1.Text += "D";
+                    SendKeys.Send("D");
                     break;
                 case 3:
-                    textBox1.Text += "J";
+                    SendKeys.Send("J");
                     break;
                 case 4:
-                    textBox1.Text += "P";
+                    SendKeys.Send("P");
                     break;
                 case 5:
-                    textBox1.Text += "V";
+                    SendKeys.Send("V");
                     break;
                 case 7:
                     layoutNum = 11;
                     Layout11();
                     break;
                 case 13:
-                    textBox1.Text += "*";
+                    SendKeys.Send("*");
                     break;
             }
 
@@ -556,23 +567,23 @@ namespace FinalYearProjectDemo
                     Layout6();
                     break;
                 case 2:
-                    textBox1.Text += "E";
+                    SendKeys.Send("E");
                     break;
                 case 3:
-                    textBox1.Text += "K";
+                    SendKeys.Send("K");
                     break;
                 case 4:
-                    textBox1.Text += "Q";
+                    SendKeys.Send("Q");
                     break;
                 case 5:
-                    textBox1.Text += "W";
+                    SendKeys.Send("W");
                     break;
                 case 7:
                     layoutNum = 12;
                     Layout12();
                     break;
                 case 13:
-                    textBox1.Text += "/";
+                    SendKeys.Send("/");
                     break;
 
             }
@@ -588,23 +599,23 @@ namespace FinalYearProjectDemo
                     Layout7();
                     break;
                 case 2:
-                    textBox1.Text += "F";
+                    SendKeys.Send("F");
                     break;
                 case 3:
-                    textBox1.Text += "L";
+                    SendKeys.Send("L");
                     break;
                 case 4:
-                    textBox1.Text += "R";
+                    SendKeys.Send("R");
                     break;
                 case 5:
-                    textBox1.Text += "X";
+                    SendKeys.Send("X");
                     break;
                 case 7:
                     layoutNum = 13;
                     Layout13();
                     break;
                 case 13:
-                    textBox1.Text += "\\";
+                    SendKeys.Send("\\");
                     break;
 
             }
@@ -680,7 +691,7 @@ namespace FinalYearProjectDemo
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            textBox1.Text += " ";
+            SendKeys.Send(" ");
 
         }
 
