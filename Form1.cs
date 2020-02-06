@@ -50,15 +50,7 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-            button1.Location = new System.Drawing.Point((w / 2)-250, (screen.Height / 2)-400);
-            button2.Location = new System.Drawing.Point((w / 2)+100, (screen.Height / 2)-400);
-            button3.Location = new System.Drawing.Point((w / 2) + 250, (screen.Height / 2)-200);
-            button4.Location = new System.Drawing.Point((w / 2) + 250, (screen.Height / 2) + 100);
-            button5.Location = new System.Drawing.Point((w / 2) + 100, (screen.Height / 2) +300);
-            button6.Location = new System.Drawing.Point((w / 2) - 250, (screen.Height / 2) + 300);
-            button7.Location = new System.Drawing.Point((w / 2) - 400, (screen.Height / 2) + 100);
-            button8.Location = new System.Drawing.Point((w / 2) - 400, (screen.Height / 2) - 200);
-            button9.Location = new System.Drawing.Point((w/2)-75, (screen.Height/2)-50);
+            
 
             button1.Text = "controls";
             button2.Text = "A B C D E F";
@@ -131,73 +123,88 @@ namespace FinalYearProjectDemo
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button1.Height;
-                        panel1.Top = button1.Top + 10;
-                        panel1.Left = button1.Left + 10;
+                        panel1.Height = panel2.Height;
+                        panel1.Width = panel2.Width;
+                        panel1.Top = panel2.Top + 10;
+                        panel1.Left = panel2.Left + 10;
+                       
                         break;
                     case 2:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button2.Height;
-                        panel1.Top = button2.Top + 10;
-                        panel1.Left = button2.Left + 10;
+                        panel1.Height = panel3.Height;
+                        panel1.Width = panel3.Width;
+                        panel1.Top = panel3.Top + 10;
+                        panel1.Left = panel3.Left + 10;
+                        
+                        
                         break;
                     case 3:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button3.Height;
-                        panel1.Top = button3.Top + 10;
-                        panel1.Left = button3.Left + 10;
+                        panel1.Height = panel4.Height;
+                        panel1.Width = panel4.Width;
+                        panel1.Top = panel4.Top + 10;
+                        panel1.Left = panel4.Left + 10;
+                        
                         break;
                     case 4:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button4.Height;
-                        panel1.Top = button4.Top + 10;
-                        panel1.Left = button4.Left + 10;
+                        panel1.Height = panel5.Height;
+                        panel1.Width = panel5.Width;
+                        panel1.Top = panel5.Top + 10;
+                        panel1.Left = panel5.Left + 10;
+                        
                         break;
                     case 5:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button5.Height;
-                        panel1.Top = button5.Top + 10;
-                        panel1.Left = button5.Left + 10;
+                        panel1.Height = panel6.Height;
+                        panel1.Width = panel6.Width;
+                        panel1.Top = panel6.Top + 10;
+                        panel1.Left = panel6.Left + 10;
+                       
                         break;
                     case 6:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button6.Height;
-                        panel1.Top = button6.Top + 10;
-                        panel1.Left = button6.Left + 10;
+                        panel1.Height = panel7.Height;
+                        panel1.Width = panel7.Width;
+                        panel1.Top = panel7.Top + 10;
+                        panel1.Left = panel7.Left + 10;
                         break;
                     case 7:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button7.Height;
-                        panel1.Top = button7.Top + 10;
-                        panel1.Left = button7.Left + 10;
+                        panel1.Height = panel8.Height;
+                        panel1.Width = panel8.Width;
+                        panel1.Top = panel8.Top + 10;
+                        panel1.Left = panel8.Left + 10;
                         break;
                     case 8:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button8.Height;
-                        panel1.Top = button8.Top + 10;
-                        panel1.Left = button8.Left + 10;
+                        panel1.Height = panel9.Height;
+                        panel1.Width = panel9.Width;
+                        panel1.Top = panel9.Top + 10;
+                        panel1.Left = panel9.Left + 10;
                         break;
                     case 0:
                         canClick = true;
                         panel1.BackColor = Color.Red;
                         highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button9.Height;
-                        panel1.Top = button9.Top + 10;
-                        panel1.Left = button9.Left + 10;
+                        panel1.Height = panel10.Height;
+                        panel1.Width = panel10.Width;
+                        panel1.Top = panel10.Top + 10;
+                        panel1.Left = panel10.Left + 10;
                         break;
 
 
@@ -713,6 +720,203 @@ namespace FinalYearProjectDemo
                 panel1.Visible = false;
                 KeyPreview = false;
             }
+        }
+
+        private void Button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.Font = new Font(button3.Font.Name, 32, FontStyle.Regular);
+            int width = button3.Size.Width;
+            int height = button3.Height;
+            int change = 20;
+            button3.Size = new Size(width + change, height + change);
+            button3.Location = new Point(button3.Location.X - (change/2), button3.Location.Y - (change / 2));
+        }
+
+        private void Button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.Font = new Font(button3.Font.Name, 16, FontStyle.Regular);
+            int width = button3.Size.Width;
+            int height = button3.Height;
+            int change = 20;
+            button3.Size = new Size(width - change, height - change);
+            button3.Location = new Point(button3.Location.X + (change / 2), button3.Location.Y + (change / 2));
+        }
+
+        private void Button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.Font = new Font(button4.Font.Name, 32, FontStyle.Regular);
+            int width = button4.Size.Width;
+            int height = button4.Height;
+            int change = 20;
+            button4.Size = new Size(width + change, height + change);
+            button4.Location = new Point(button4.Location.X - (change / 2), button4.Location.Y - (change / 2));
+        }
+
+        private void Button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.Font = new Font(button4.Font.Name, 16, FontStyle.Regular);
+            int width = button4.Size.Width;
+            int height = button4.Height;
+            int change = 20;
+            button4.Size = new Size(width - change, height - change);
+            button4.Location = new Point(button4.Location.X + (change / 2), button4.Location.Y + (change / 2));
+        }
+
+        private void Button5_MouseEnter(object sender, EventArgs e)
+        {
+            button5.Font = new Font(button5.Font.Name, 32, FontStyle.Regular);
+            int width = button5.Size.Width;
+            int height = button5.Height;
+            int change = 20;
+            button5.Size = new Size(width + change, height + change);
+            button5.Location = new Point(button5.Location.X - (change / 2), button5.Location.Y - (change / 2));
+
+        }
+
+        private void Button5_MouseLeave(object sender, EventArgs e)
+        {
+            button5.Font = new Font(button5.Font.Name, 16, FontStyle.Regular);
+            int width = button5.Size.Width;
+            int height = button5.Height;
+            int change = 20;
+            button5.Size = new Size(width - change, height - change);
+            button5.Location = new Point(button5.Location.X + (change / 2), button5.Location.Y + (change / 2));
+
+        }
+
+        private void Button6_MouseEnter(object sender, EventArgs e)
+        {
+            button6.Font = new Font(button6.Font.Name, 32, FontStyle.Regular);
+            int width = button6.Size.Width;
+            int height = button6.Height;
+            int change = 20;
+            button6.Size = new Size(width + change, height + change);
+            button6.Location = new Point(button6.Location.X - (change / 2), button6.Location.Y - (change / 2));
+
+
+        }
+
+        private void Button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.Font = new Font(button6.Font.Name, 16, FontStyle.Regular);
+            int width = button6.Size.Width;
+            int height = button6.Height;
+            int change = 20;
+            button6.Size = new Size(width - change, height - change);
+            button6.Location = new Point(button6.Location.X + (change / 2), button6.Location.Y + (change / 2));
+
+        }
+
+        private void Button7_MouseEnter(object sender, EventArgs e)
+        {
+            button7.Font = new Font(button7.Font.Name, 32, FontStyle.Regular);
+            int width = button7.Size.Width;
+            int height = button7.Height;
+            int change = 20;
+            button7.Size = new Size(width + change, height + change);
+            button7.Location = new Point(button7.Location.X - (change / 2), button7.Location.Y - (change / 2));
+
+
+        }
+
+        private void Button7_MouseLeave(object sender, EventArgs e)
+        {
+            button7.Font = new Font(button7.Font.Name, 16, FontStyle.Regular);
+            int width = button7.Size.Width;
+            int height = button7.Height;
+            int change = 20;
+            button7.Size = new Size(width - change, height - change);
+            button7.Location = new Point(button7.Location.X + (change / 2), button7.Location.Y + (change / 2));
+
+        }
+
+        private void Button8_MouseEnter(object sender, EventArgs e)
+        {
+            button8.Font = new Font(button8.Font.Name, 32, FontStyle.Regular);
+            int width = button8.Size.Width;
+            int height = button8.Height;
+            int change = 20;
+            button8.Size = new Size(width + change, height + change);
+            button8.Location = new Point(button8.Location.X - (change / 2), button8.Location.Y - (change / 2));
+
+        }
+
+        private void Button8_MouseLeave(object sender, EventArgs e)
+        {
+            button8.Font = new Font(button8.Font.Name, 16, FontStyle.Regular);
+            int width = button8.Size.Width;
+            int height = button8.Height;
+            int change = 20;
+            button8.Size = new Size(width - change, height - change);
+            button8.Location = new Point(button8.Location.X + (change / 2), button8.Location.Y + (change / 2));
+
+
+        }
+
+        private void Button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.Font = new Font(button1.Font.Name, 32, FontStyle.Regular);
+            int width = button1.Size.Width;
+            int height = button1.Height;
+            int change = 20;
+            button1.Size = new Size(width + change, height + change);
+            button1.Location = new Point(button1.Location.X - (change / 2), button1.Location.Y - (change / 2));
+
+        }
+
+        private void Button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.Font = new Font(button1.Font.Name, 16, FontStyle.Regular);
+            int width = button1.Size.Width;
+            int height = button1.Height;
+            int change = 20;
+            button1.Size = new Size(width - change, height - change);
+            button1.Location = new Point(button1.Location.X + (change / 2), button1.Location.Y + (change / 2));
+
+        }
+
+        private void Button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.Font = new Font(button2.Font.Name, 32, FontStyle.Regular);
+            int width = button2.Size.Width;
+            int height = button2.Height;
+            int change = 20;
+            button2.Size = new Size(width + change, height + change);
+            button2.Location = new Point(button2.Location.X - (change / 2), button2.Location.Y - (change / 2));
+
+        }
+
+        private void Button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.Font = new Font(button2.Font.Name, 16, FontStyle.Regular);
+            int width = button2.Size.Width;
+            int height = button2.Height;
+            int change = 20;
+            button2.Size = new Size(width - change, height - change);
+            button2.Location = new Point(button2.Location.X + (change / 2), button2.Location.Y + (change / 2));
+
+        }
+
+        private void Button9_MouseEnter(object sender, EventArgs e)
+        {
+            button9.Font = new Font(button9.Font.Name, 32, FontStyle.Regular);
+            int width = button9.Size.Width;
+            int height = button9.Height;
+            int change = 20;
+            button9.Size = new Size(width + change, height + change);
+            button9.Location = new Point(button9.Location.X - (change / 2), button9.Location.Y - (change / 2));
+
+        }
+
+        private void Button9_MouseLeave(object sender, EventArgs e)
+        {
+            button9.Font = new Font(button9.Font.Name, 16, FontStyle.Regular);
+            int width = button9.Size.Width;
+            int height = button9.Height;
+            int change = 20;
+            button9.Size = new Size(width - change, height - change);
+            button9.Location = new Point(button9.Location.X + (change / 2), button9.Location.Y + (change / 2));
+
         }
     }
 }
