@@ -27,16 +27,30 @@ namespace FinalYearProjectDemo
         private int highlightNum;
         private Boolean canClick;
         private string[] Words;
+        private String currentWord;
+
+        public void populatePredictingWords()
+        {
+            var resultList = from name in Words
+                             where name.StartsWith(currentWord)
+                             select name;
+
+            try
+            {
+                button10.Text = resultList.ElementAt(1);
+                button11.Text = resultList.ElementAt(2);
+                button12.Text = resultList.ElementAt(3);
+               
+            }
+            catch (Exception e) { };
+
+        }
         public Form1()
         {
             InitializeComponent();
 
-           /* Words = File.ReadAllLines("C:\\words\\words.txt");
-            for (int i = 0; i < Words.Length; i++)
-            {
-                textBox1.AutoCompleteCustomSource.Add(Words[i]);
-            }
-            */
+            Words = File.ReadAllLines("C:\\words\\words.txt");
+           
 
 
             Timer timer = new Timer();
@@ -50,7 +64,9 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-            
+           
+
+
 
             button1.Text = "controls";
             button2.Text = "A B C D E F";
@@ -404,19 +420,29 @@ namespace FinalYearProjectDemo
                     break;
                 case 2:
                     SendKeys.Send("A");
-                    textBox1.Text += ("A");
+                    currentWord += "a";
+                    populatePredictingWords();
+                    
                     break;
                 case 3:
                     SendKeys.Send("G");
+                    currentWord += "g";
+                    populatePredictingWords();
                     break;
                 case 4:
                     SendKeys.Send("M");
+                    currentWord += "m";
+                    populatePredictingWords();
                     break;
                 case 5:
                     SendKeys.Send("S");
+                    currentWord += "s";
+                    populatePredictingWords();
                     break;
                 case 6:
                     SendKeys.Send("Y");
+                    currentWord += "y";
+                    populatePredictingWords();
                     break;
                 case 7:
                     layoutNum = 8;
@@ -632,7 +658,7 @@ namespace FinalYearProjectDemo
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.KeyCode == Keys.M)&&(canClick))
+            if ((e.KeyCode == Keys.Tab)&&(canClick))
             {
                 switch (highlightNum)
             {
@@ -699,12 +725,13 @@ namespace FinalYearProjectDemo
         private void Button8_Click(object sender, EventArgs e)
         {
             SendKeys.Send(" ");
+            currentWord = "";
 
         }
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            //textBox1.Text = "";
         }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -917,6 +944,72 @@ namespace FinalYearProjectDemo
             button9.Size = new Size(width - change, height - change);
             button9.Location = new Point(button9.Location.X + (change / 2), button9.Location.Y + (change / 2));
 
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if ((e.Button == MouseButtons.Left) && (canClick))
+            {
+                switch (highlightNum)
+                {
+                    case 2:
+                        panel1.BackColor = Color.Yellow;
+                        Button1_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 3:
+                        panel1.BackColor = Color.Yellow;
+                        Button2_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 4:
+                        panel1.BackColor = Color.Yellow;
+                        Button3_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 5:
+                        panel1.BackColor = Color.Yellow;
+                        Button4_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 6:
+                        panel1.BackColor = Color.Yellow;
+                        Button5_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 7:
+                        panel1.BackColor = Color.Yellow;
+                        Button6_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 8:
+                        panel1.BackColor = Color.Yellow;
+                        Button7_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 0:
+                        panel1.BackColor = Color.Yellow;
+                        Button8_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+                    case 1:
+                        panel1.BackColor = Color.Yellow;
+                        Button9_Click(sender, e);
+                        highlightNum = 1;
+                        canClick = false;
+                        break;
+
+
+                }
+            }
         }
     }
 }
