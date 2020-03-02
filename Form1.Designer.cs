@@ -349,6 +349,7 @@ namespace FinalYearProjectDemo
             this.button12.TabIndex = 6;
             this.button12.Text = "button12";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
             // panel12
             // 
@@ -369,6 +370,7 @@ namespace FinalYearProjectDemo
             this.button11.TabIndex = 6;
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
             // panel11
             // 
@@ -389,6 +391,7 @@ namespace FinalYearProjectDemo
             this.button10.TabIndex = 6;
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // Form1
             // 

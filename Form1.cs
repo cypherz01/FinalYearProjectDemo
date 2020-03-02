@@ -14,6 +14,7 @@ namespace FinalYearProjectDemo
     public partial class Form1 : Form
     {
 
+        //create parameters
         protected override CreateParams CreateParams
         {
             get
@@ -23,15 +24,17 @@ namespace FinalYearProjectDemo
                 return param;
             }
         }
+
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
-        private string[] Words;
+        private List<string> words = new List<string>();
         private String currentWord;
 
-        public void populatePredictingWords()
+        // populating auto complete buttons
+        public void populatePredictingWords(String currentWord)
         {
-            var resultList = from name in Words
+            var resultList = from name in words
                              where name.StartsWith(currentWord)
                              select name;
 
@@ -40,19 +43,14 @@ namespace FinalYearProjectDemo
                 button10.Text = resultList.ElementAt(1);
                 button11.Text = resultList.ElementAt(2);
                 button12.Text = resultList.ElementAt(3);
-               
+                
             }
             catch (Exception e) { };
 
         }
-        public Form1()
+
+        public void initializeScreenFormat()
         {
-            InitializeComponent();
-
-            Words = File.ReadAllLines("C:\\words\\words.txt");
-           
-
-
             Timer timer = new Timer();
             timer.Interval = (1 * 750); // 0.75 seconds
             timer.Tick += new EventHandler(timer_Tick);
@@ -64,7 +62,7 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-           
+
 
 
 
@@ -85,8 +83,15 @@ namespace FinalYearProjectDemo
             panel1.Left = button2.Left + 10;
             panel1.Height = button2.Height;
             panel1.SendToBack();
-           
 
+        }
+        public Form1()
+        {
+            InitializeComponent();
+            initializeScreenFormat();
+
+            var  WordsFile = File.ReadAllLines("words.txt");
+            words = new List<string>(WordsFile);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -419,30 +424,30 @@ namespace FinalYearProjectDemo
                     Layout2();
                     break;
                 case 2:
-                    SendKeys.Send("A");
+                    SendKeys.Send("a");
                     currentWord += "a";
-                    populatePredictingWords();
+                    populatePredictingWords(currentWord);
                     
                     break;
                 case 3:
-                    SendKeys.Send("G");
+                    SendKeys.Send("g");
                     currentWord += "g";
-                    populatePredictingWords();
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("M");
+                    SendKeys.Send("m");
                     currentWord += "m";
-                    populatePredictingWords();
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("S");
+                    SendKeys.Send("s");
                     currentWord += "s";
-                    populatePredictingWords();
+                    populatePredictingWords(currentWord);
                     break;
                 case 6:
-                    SendKeys.Send("Y");
+                    SendKeys.Send("y");
                     currentWord += "y";
-                    populatePredictingWords();
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 8;
@@ -483,19 +488,29 @@ namespace FinalYearProjectDemo
                     Layout3();
                     break;
                 case 2:
-                    SendKeys.Send("B");
+                    SendKeys.Send("b");
+                    currentWord += "b";
+                    populatePredictingWords(currentWord);
                     break;
                 case 3:
-                    SendKeys.Send("H");
+                    SendKeys.Send("h");
+                    currentWord += "h";
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("N");
+                    SendKeys.Send("n");
+                    currentWord += "n";
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("T");
+                    SendKeys.Send("t");
+                    currentWord += "t";
+                    populatePredictingWords(currentWord);
                     break;
                 case 6:
-                    SendKeys.Send("Z");
+                    SendKeys.Send("z");
+                    currentWord += "z";
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 9;
@@ -535,16 +550,24 @@ namespace FinalYearProjectDemo
                     Layout4();
                     break;
                 case 2:
-                    SendKeys.Send("C");
+                    SendKeys.Send("c");
+                    currentWord += "c";
+                    populatePredictingWords(currentWord);
                     break;
                 case 3:
-                    SendKeys.Send("I");
+                    SendKeys.Send("i");
+                    currentWord += "i";
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("O");
+                    SendKeys.Send("o");
+                    currentWord += "o";
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("U");
+                    SendKeys.Send("u");
+                    currentWord += "u";
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 10;
@@ -567,16 +590,25 @@ namespace FinalYearProjectDemo
                     Layout5();
                     break;
                 case 2:
-                    SendKeys.Send("D");
+                    SendKeys.Send("d");
+                    currentWord += "d";
+                    populatePredictingWords(currentWord);
+
                     break;
                 case 3:
-                    SendKeys.Send("J");
+                    SendKeys.Send("j");
+                    currentWord += "j";
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("P");
+                    SendKeys.Send("p");
+                    currentWord += "p";
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("V");
+                    SendKeys.Send("v");
+                    currentWord += "v";
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 11;
@@ -600,16 +632,24 @@ namespace FinalYearProjectDemo
                     Layout6();
                     break;
                 case 2:
-                    SendKeys.Send("E");
+                    SendKeys.Send("e");
+                    currentWord += "e";
+                    populatePredictingWords(currentWord);
                     break;
                 case 3:
-                    SendKeys.Send("K");
+                    SendKeys.Send("k");
+                    currentWord += "k";
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("Q");
+                    SendKeys.Send("q");
+                    currentWord += "q";
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("W");
+                    SendKeys.Send("w");
+                    currentWord += "w";
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 12;
@@ -632,16 +672,24 @@ namespace FinalYearProjectDemo
                     Layout7();
                     break;
                 case 2:
-                    SendKeys.Send("F");
+                    SendKeys.Send("f");
+                    currentWord += "f";
+                    populatePredictingWords(currentWord);
                     break;
                 case 3:
-                    SendKeys.Send("L");
+                    SendKeys.Send("l");
+                    currentWord += "l";
+                    populatePredictingWords(currentWord);
                     break;
                 case 4:
-                    SendKeys.Send("R");
+                    SendKeys.Send("r");
+                    currentWord += "r";
+                    populatePredictingWords(currentWord);
                     break;
                 case 5:
-                    SendKeys.Send("X");
+                    SendKeys.Send("x");
+                    currentWord += "x";
+                    populatePredictingWords(currentWord);
                     break;
                 case 7:
                     layoutNum = 13;
@@ -1010,6 +1058,34 @@ namespace FinalYearProjectDemo
 
                 }
             }
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentWord.Length; i++)
+            {
+                SendKeys.Send("{BACKSPACE}");
+            }
+            SendKeys.Send(button10.Text);
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentWord.Length; i++)
+            {
+                SendKeys.Send("{BACKSPACE}");
+            }
+            SendKeys.Send(button11.Text);
+
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < currentWord.Length; i++)
+            {
+                SendKeys.Send("{BACKSPACE}");
+            }
+            SendKeys.Send(button12.Text);
         }
     }
 }
