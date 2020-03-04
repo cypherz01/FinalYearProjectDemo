@@ -42,7 +42,6 @@ namespace FinalYearProjectDemo
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -54,7 +53,6 @@ namespace FinalYearProjectDemo
             this.panel8 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
@@ -71,7 +69,6 @@ namespace FinalYearProjectDemo
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -171,20 +168,6 @@ namespace FinalYearProjectDemo
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(284, 205);
             this.panel3.TabIndex = 13;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(36, 33);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(209, 139);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.Button9_Click);
-            this.button9.MouseEnter += new System.EventHandler(this.Button9_MouseEnter);
-            this.button9.MouseLeave += new System.EventHandler(this.Button9_MouseLeave);
             // 
             // panel4
             // 
@@ -310,15 +293,6 @@ namespace FinalYearProjectDemo
             this.panel9.Size = new System.Drawing.Size(269, 205);
             this.panel9.TabIndex = 13;
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel10.Controls.Add(this.button9);
-            this.panel10.Location = new System.Drawing.Point(328, 233);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(284, 205);
-            this.panel10.TabIndex = 13;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel13);
@@ -404,7 +378,6 @@ namespace FinalYearProjectDemo
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
@@ -427,7 +400,6 @@ namespace FinalYearProjectDemo
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -453,9 +425,7 @@ namespace FinalYearProjectDemo
         private Panel panel9;
         private Panel panel7;
         private Panel panel8;
-        private Panel panel10;
         private Button button8;
-        private Button button9;
         private Button button5;
         private Button button3;
         private Button button4;

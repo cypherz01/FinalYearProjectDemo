@@ -90,7 +90,7 @@ namespace FinalYearProjectDemo
             InitializeComponent();
             initializeScreenFormat();
 
-            var  WordsFile = File.ReadAllLines("words.txt");
+            var  WordsFile = File.ReadAllLines("C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\words.txt");
             words = new List<string>(WordsFile);
         }
 
@@ -125,14 +125,7 @@ namespace FinalYearProjectDemo
                         panel1.Top = button3.Top + 10;
                         panel1.Left = button3.Left + 10;
                         break;
-                    case 4:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = 1;
-                        panel1.Height = button9.Height;
-                        panel1.Top = button9.Top + 10;
-                        panel1.Left = button9.Left + 10;
-                        break;
+                    
 
                 }
             }
@@ -218,15 +211,7 @@ namespace FinalYearProjectDemo
                         panel1.Top = panel9.Top + 10;
                         panel1.Left = panel9.Left + 10;
                         break;
-                    case 0:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel10.Height;
-                        panel1.Width = panel10.Width;
-                        panel1.Top = panel10.Top + 10;
-                        panel1.Left = panel10.Left + 10;
-                        break;
+                    
 
 
 
@@ -758,12 +743,7 @@ namespace FinalYearProjectDemo
                         highlightNum = 1;
                         canClick = false;
                         break;
-                case 1:
-                        panel1.BackColor = Color.Yellow;
-                        Button9_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
+                
 
 
             }
@@ -777,10 +757,6 @@ namespace FinalYearProjectDemo
 
         }
 
-        private void Button9_Click(object sender, EventArgs e)
-        {
-            //textBox1.Text = "";
-        }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -972,28 +948,6 @@ namespace FinalYearProjectDemo
 
         }
 
-        private void Button9_MouseEnter(object sender, EventArgs e)
-        {
-            button9.Font = new Font(button9.Font.Name, 32, FontStyle.Regular);
-            int width = button9.Size.Width;
-            int height = button9.Height;
-            int change = 20;
-            button9.Size = new Size(width + change, height + change);
-            button9.Location = new Point(button9.Location.X - (change / 2), button9.Location.Y - (change / 2));
-
-        }
-
-        private void Button9_MouseLeave(object sender, EventArgs e)
-        {
-            button9.Font = new Font(button9.Font.Name, 16, FontStyle.Regular);
-            int width = button9.Size.Width;
-            int height = button9.Height;
-            int change = 20;
-            button9.Size = new Size(width - change, height - change);
-            button9.Location = new Point(button9.Location.X + (change / 2), button9.Location.Y + (change / 2));
-
-        }
-
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             if ((e.Button == MouseButtons.Left) && (canClick))
@@ -1048,12 +1002,7 @@ namespace FinalYearProjectDemo
                         highlightNum = 1;
                         canClick = false;
                         break;
-                    case 1:
-                        panel1.BackColor = Color.Yellow;
-                        Button9_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
+                  
 
 
                 }
