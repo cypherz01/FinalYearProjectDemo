@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,11 +26,26 @@ namespace FinalYearProjectDemo
             }
         }
 
+        class keyboardLayout
+        {
+            public int id { get; set; }
+            public String button1 { get; set; }
+            public String button2 { get; set; }
+            public String button3 { get; set; }
+            public String button4 { get; set; }
+            public String button5 { get; set; }
+            public String button6 { get; set; }
+            public String button7 { get; set; }
+            public String button8 { get; set; }
+
+        }
+
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
         private List<string> words = new List<string>();
         private String currentWord;
+        private String layoutFile;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
@@ -62,10 +78,6 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-
-
-
-
             button1.Text = "controls";
             button2.Text = "A B C D E F";
             button3.Text = "G H I J K L";
@@ -91,7 +103,13 @@ namespace FinalYearProjectDemo
             initializeScreenFormat();
 
             var  WordsFile = File.ReadAllLines("C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\words.txt");
+            layoutFile = "C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\Layout.JSON";
             words = new List<string>(WordsFile);
+
+            
+
+
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -221,167 +239,28 @@ namespace FinalYearProjectDemo
 
         }
 
-
-        private void Layout1()
+        private void updateLayout(int id)
         {
-            button4.Visible = true;
-            button5.Visible = true;
-            button6.Visible = true;
-            button7.Visible = true;
-            button8.Visible = true;
+            using (StreamReader r = new StreamReader(layoutFile))
+            {
+                string json = r.ReadToEnd();
+                List<keyboardLayout> layouts = JsonConvert.DeserializeObject<List<keyboardLayout>>(json);
 
-            button1.Text = "controls";
-            button2.Text = "A B C D E F";
-            button3.Text = "G H I J K L";
-            button4.Text = "M N O P Q R";
-            button5.Text = "S T U V W X";
-            button6.Text = "Y Z";
-            button7.Text = "1 2 3 4...";
-            button8.Text = "space";
-        }
-
-        private void Layout2()
-        {
-            button1.Text = "Return";
-            button2.Text = "A";
-            button3.Text = "B";
-            button4.Text = "C";
-            button5.Text = "D";
-            button6.Text = "E";
-            button7.Text = "F";
-            button8.Text = "space";
-        }
-
-        private void Layout3()
-        {
-            button1.Text = "Return";
-            button2.Text = "G";
-            button3.Text = "H";
-            button4.Text = "I";
-            button5.Text = "J";
-            button6.Text = "K";
-            button7.Text = "L";
-            button8.Text = "space";
-        }
-
-        private void Layout4()
-        {
-            button1.Text = "Return";
-            button2.Text = "M";
-            button3.Text = "N";
-            button4.Text = "O";
-            button5.Text = "P";
-            button6.Text = "Q";
-            button7.Text = "R";
-            button8.Text = "space";
-        }
-
-        private void Layout5()
-        {
-            button1.Text = "Return";
-            button2.Text = "S";
-            button3.Text = "T";
-            button4.Text = "U";
-            button5.Text = "V";
-            button6.Text = "W";
-            button7.Text = "X";
-            button8.Text = "space";
-        }
-
-        private void Layout6()
-        {
-            button1.Text = "Return";
-            button2.Text = "Y";
-            button3.Text = "Z";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout7()
-        {
-            button1.Text = "Return";
-            button2.Text = "0 1";
-            button3.Text = "2 3";
-            button4.Text = "4 5";
-            button5.Text = "6 7";
-            button6.Text = "8 9";
-            button7.Text = "! ? . * ...";
-            button8.Text = "space";
-        }
-
-        private void Layout8()
-        {
-            button1.Text = "Return";
-            button2.Text = "0";
-            button3.Text = "1";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout9()
-        {
-            button1.Text = "Return";
-            button2.Text = "2";
-            button3.Text = "3";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout10()
-        {
-            button1.Text = "Return";
-            button2.Text = "4";
-            button3.Text = "5";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout11()
-        {
-            button1.Text = "Return";
-            button2.Text = "6";
-            button3.Text = "7";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout12()
-        {
-            button1.Text = "Return";
-            button2.Text = "8";
-            button3.Text = "9";
-            button4.Visible = false;
-            button5.Visible = false;
-            button6.Visible = false;
-            button7.Visible = false;
-            button8.Visible = false;
-        }
-
-        private void Layout13()
-        {
-            button1.Text = "Return";
-            button2.Text = "!";
-            button3.Text = "?";
-            button4.Text = ".";
-            button5.Text = "*";
-            button6.Text = "/";
-            button7.Text = "\\";
-            button8.Text = "space";
+                foreach (var item in layouts)
+                {
+                    if (item.id == id)
+                    {
+                        button1.Text = item.button1;
+                        button2.Text = item.button2;
+                        button3.Text = item.button3;
+                        button4.Text = item.button4;
+                        button5.Text = item.button5;
+                        button6.Text = item.button6;
+                        button7.Text = item.button7;
+                        button8.Text = item.button8;
+                    }
+                }
+            }
         }
 
 
@@ -390,12 +269,12 @@ namespace FinalYearProjectDemo
             if (layoutNum == 1)
             {
                 layoutNum = 6;
-                Layout6();
+                updateLayout(6);
             }
             else
             {
                 layoutNum = 1;
-                Layout1();
+                updateLayout(1);
             }
         }
 
@@ -406,7 +285,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 2;
-                    Layout2();
+                    updateLayout(2);
                     break;
                 case 2:
                     SendKeys.Send("a");
@@ -436,7 +315,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 8;
-                    Layout8();
+                    updateLayout(8);
                     break;
                 case 8:
                     SendKeys.Send("0");
@@ -470,7 +349,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 3;
-                    Layout3();
+                    updateLayout(3);
                     break;
                 case 2:
                     SendKeys.Send("b");
@@ -499,7 +378,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 9;
-                    Layout9();
+                    updateLayout(9);
                     break;
                 case 8:
                     SendKeys.Send("1");
@@ -532,7 +411,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 4;
-                    Layout4();
+                    updateLayout(4);
                     break;
                 case 2:
                     SendKeys.Send("c");
@@ -556,7 +435,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 10;
-                    Layout10();
+                    updateLayout(10);
                     break;
                 case 13:
                     SendKeys.Send(".");
@@ -572,7 +451,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 5;
-                    Layout5();
+                    updateLayout(5);
                     break;
                 case 2:
                     SendKeys.Send("d");
@@ -597,7 +476,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 11;
-                    Layout11();
+                    updateLayout(11);
                     break;
                 case 13:
                     SendKeys.Send("*");
@@ -614,7 +493,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 6;
-                    Layout6();
+                    updateLayout(6);
                     break;
                 case 2:
                     SendKeys.Send("e");
@@ -638,7 +517,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 12;
-                    Layout12();
+                    updateLayout(12);
                     break;
                 case 13:
                     SendKeys.Send("/");
@@ -654,7 +533,7 @@ namespace FinalYearProjectDemo
             {
                 case 1:
                     layoutNum = 7;
-                    Layout7();
+                    updateLayout(7);
                     break;
                 case 2:
                     SendKeys.Send("f");
@@ -678,7 +557,7 @@ namespace FinalYearProjectDemo
                     break;
                 case 7:
                     layoutNum = 13;
-                    Layout13();
+                    updateLayout(13);
                     break;
                 case 13:
                     SendKeys.Send("\\");
