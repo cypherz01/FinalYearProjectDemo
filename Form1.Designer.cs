@@ -85,8 +85,8 @@ namespace FinalYearProjectDemo
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.Button1_MouseEnter);
-            this.button1.MouseLeave += new System.EventHandler(this.Button1_MouseLeave);
+            this.button1.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // button2
             // 
@@ -99,8 +99,8 @@ namespace FinalYearProjectDemo
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.Button2_MouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.Button2_MouseLeave);
+            this.button2.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel1
             // 
@@ -157,8 +157,8 @@ namespace FinalYearProjectDemo
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.Button8_Click);
-            this.button8.MouseEnter += new System.EventHandler(this.Button8_MouseEnter);
-            this.button8.MouseLeave += new System.EventHandler(this.Button8_MouseLeave);
+            this.button8.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button8.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel3
             // 
@@ -189,8 +189,8 @@ namespace FinalYearProjectDemo
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
-            this.button3.MouseEnter += new System.EventHandler(this.Button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.Button3_MouseLeave);
+            this.button3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel5
             // 
@@ -212,8 +212,8 @@ namespace FinalYearProjectDemo
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
-            this.button4.MouseEnter += new System.EventHandler(this.Button4_MouseEnter);
-            this.button4.MouseLeave += new System.EventHandler(this.Button4_MouseLeave);
+            this.button4.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button4.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel6
             // 
@@ -235,8 +235,8 @@ namespace FinalYearProjectDemo
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
-            this.button5.MouseEnter += new System.EventHandler(this.Button5_MouseEnter);
-            this.button5.MouseLeave += new System.EventHandler(this.Button5_MouseLeave);
+            this.button5.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button5.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel7
             // 
@@ -258,8 +258,8 @@ namespace FinalYearProjectDemo
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
-            this.button6.MouseEnter += new System.EventHandler(this.Button6_MouseEnter);
-            this.button6.MouseLeave += new System.EventHandler(this.Button6_MouseLeave);
+            this.button6.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button6.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel8
             // 
@@ -281,8 +281,8 @@ namespace FinalYearProjectDemo
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
-            this.button7.MouseEnter += new System.EventHandler(this.Button7_MouseEnter);
-            this.button7.MouseLeave += new System.EventHandler(this.Button7_MouseLeave);
+            this.button7.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button7.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel9
             // 
@@ -323,7 +323,7 @@ namespace FinalYearProjectDemo
             this.button12.TabIndex = 6;
             this.button12.Text = "button12";
             this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.Button12_Click);
+            this.button12.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
             // panel12
             // 
@@ -344,7 +344,7 @@ namespace FinalYearProjectDemo
             this.button11.TabIndex = 6;
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            this.button11.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
             // panel11
             // 
@@ -365,7 +365,7 @@ namespace FinalYearProjectDemo
             this.button10.TabIndex = 6;
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            this.button10.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
             // Form1
             // 

@@ -106,10 +106,6 @@ namespace FinalYearProjectDemo
             layoutFile = "C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\Layout.JSON";
             words = new List<string>(WordsFile);
 
-            
-
-
-            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -143,8 +139,6 @@ namespace FinalYearProjectDemo
                         panel1.Top = button3.Top + 10;
                         panel1.Left = button3.Left + 10;
                         break;
-                    
-
                 }
             }
             else
@@ -229,11 +223,6 @@ namespace FinalYearProjectDemo
                         panel1.Top = panel9.Top + 10;
                         panel1.Left = panel9.Left + 10;
                         break;
-                    
-
-
-
-
                 }
             }
 
@@ -335,8 +324,6 @@ namespace FinalYearProjectDemo
                 case 13:
                     SendKeys.Send("!");
                     break;
-
-
             }
 
 
@@ -398,8 +385,6 @@ namespace FinalYearProjectDemo
                 case 13:
                     SendKeys.Send("?");
                     break;
-
-
             }
 
 
@@ -440,7 +425,6 @@ namespace FinalYearProjectDemo
                 case 13:
                     SendKeys.Send(".");
                     break;
-
             }
 
         }
@@ -482,9 +466,6 @@ namespace FinalYearProjectDemo
                     SendKeys.Send("*");
                     break;
             }
-
-
-
         }
 
         private void Button6_Click(object sender, EventArgs e)
@@ -522,7 +503,6 @@ namespace FinalYearProjectDemo
                 case 13:
                     SendKeys.Send("/");
                     break;
-
             }
         }
 
@@ -564,8 +544,6 @@ namespace FinalYearProjectDemo
                     break;
 
             }
-
-
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -621,10 +599,7 @@ namespace FinalYearProjectDemo
                         Button8_Click(sender, e);
                         highlightNum = 1;
                         canClick = false;
-                        break;
-                
-
-
+                        break;              
             }
             }
         }
@@ -633,7 +608,6 @@ namespace FinalYearProjectDemo
         {
             SendKeys.Send(" ");
             currentWord = "";
-
         }
 
 
@@ -643,7 +617,6 @@ namespace FinalYearProjectDemo
             {
                 panel1.Visible = true;
                 KeyPreview = true;
-
             }
             else
             {
@@ -652,180 +625,31 @@ namespace FinalYearProjectDemo
             }
         }
 
-        private void Button3_MouseEnter(object sender, EventArgs e)
+        private void Button_MouseEnter(object sender, EventArgs e)
         {
-            button3.Font = new Font(button3.Font.Name, 32, FontStyle.Regular);
-            int width = button3.Size.Width;
-            int height = button3.Height;
+            Button b = (Button)sender;
+
+            b.Font = new Font(b.Font.Name, 32, FontStyle.Regular);
+            int width = b.Size.Width;
+            int height = b.Height;
             int change = 20;
-            button3.Size = new Size(width + change, height + change);
-            button3.Location = new Point(button3.Location.X - (change/2), button3.Location.Y - (change / 2));
+            b.Size = new Size(width + change, height + change);
+            b.Location = new Point(b.Location.X - (change / 2), b.Location.Y - (change / 2));
         }
 
-        private void Button3_MouseLeave(object sender, EventArgs e)
+        private void Button_MouseLeave(object sender, EventArgs e)
         {
-            button3.Font = new Font(button3.Font.Name, 16, FontStyle.Regular);
-            int width = button3.Size.Width;
-            int height = button3.Height;
+            Button b = (Button)sender;
+
+            b.Font = new Font(b.Font.Name, 16, FontStyle.Regular);
+            int width = b.Size.Width;
+            int height = b.Height;
             int change = 20;
-            button3.Size = new Size(width - change, height - change);
-            button3.Location = new Point(button3.Location.X + (change / 2), button3.Location.Y + (change / 2));
+            b.Size = new Size(width - change, height - change);
+            b.Location = new Point(b.Location.X + (change / 2), b.Location.Y + (change / 2));
         }
 
-        private void Button4_MouseEnter(object sender, EventArgs e)
-        {
-            button4.Font = new Font(button4.Font.Name, 32, FontStyle.Regular);
-            int width = button4.Size.Width;
-            int height = button4.Height;
-            int change = 20;
-            button4.Size = new Size(width + change, height + change);
-            button4.Location = new Point(button4.Location.X - (change / 2), button4.Location.Y - (change / 2));
-        }
 
-        private void Button4_MouseLeave(object sender, EventArgs e)
-        {
-            button4.Font = new Font(button4.Font.Name, 16, FontStyle.Regular);
-            int width = button4.Size.Width;
-            int height = button4.Height;
-            int change = 20;
-            button4.Size = new Size(width - change, height - change);
-            button4.Location = new Point(button4.Location.X + (change / 2), button4.Location.Y + (change / 2));
-        }
-
-        private void Button5_MouseEnter(object sender, EventArgs e)
-        {
-            button5.Font = new Font(button5.Font.Name, 32, FontStyle.Regular);
-            int width = button5.Size.Width;
-            int height = button5.Height;
-            int change = 20;
-            button5.Size = new Size(width + change, height + change);
-            button5.Location = new Point(button5.Location.X - (change / 2), button5.Location.Y - (change / 2));
-
-        }
-
-        private void Button5_MouseLeave(object sender, EventArgs e)
-        {
-            button5.Font = new Font(button5.Font.Name, 16, FontStyle.Regular);
-            int width = button5.Size.Width;
-            int height = button5.Height;
-            int change = 20;
-            button5.Size = new Size(width - change, height - change);
-            button5.Location = new Point(button5.Location.X + (change / 2), button5.Location.Y + (change / 2));
-
-        }
-
-        private void Button6_MouseEnter(object sender, EventArgs e)
-        {
-            button6.Font = new Font(button6.Font.Name, 32, FontStyle.Regular);
-            int width = button6.Size.Width;
-            int height = button6.Height;
-            int change = 20;
-            button6.Size = new Size(width + change, height + change);
-            button6.Location = new Point(button6.Location.X - (change / 2), button6.Location.Y - (change / 2));
-
-
-        }
-
-        private void Button6_MouseLeave(object sender, EventArgs e)
-        {
-            button6.Font = new Font(button6.Font.Name, 16, FontStyle.Regular);
-            int width = button6.Size.Width;
-            int height = button6.Height;
-            int change = 20;
-            button6.Size = new Size(width - change, height - change);
-            button6.Location = new Point(button6.Location.X + (change / 2), button6.Location.Y + (change / 2));
-
-        }
-
-        private void Button7_MouseEnter(object sender, EventArgs e)
-        {
-            button7.Font = new Font(button7.Font.Name, 32, FontStyle.Regular);
-            int width = button7.Size.Width;
-            int height = button7.Height;
-            int change = 20;
-            button7.Size = new Size(width + change, height + change);
-            button7.Location = new Point(button7.Location.X - (change / 2), button7.Location.Y - (change / 2));
-
-
-        }
-
-        private void Button7_MouseLeave(object sender, EventArgs e)
-        {
-            button7.Font = new Font(button7.Font.Name, 16, FontStyle.Regular);
-            int width = button7.Size.Width;
-            int height = button7.Height;
-            int change = 20;
-            button7.Size = new Size(width - change, height - change);
-            button7.Location = new Point(button7.Location.X + (change / 2), button7.Location.Y + (change / 2));
-
-        }
-
-        private void Button8_MouseEnter(object sender, EventArgs e)
-        {
-            button8.Font = new Font(button8.Font.Name, 32, FontStyle.Regular);
-            int width = button8.Size.Width;
-            int height = button8.Height;
-            int change = 20;
-            button8.Size = new Size(width + change, height + change);
-            button8.Location = new Point(button8.Location.X - (change / 2), button8.Location.Y - (change / 2));
-
-        }
-
-        private void Button8_MouseLeave(object sender, EventArgs e)
-        {
-            button8.Font = new Font(button8.Font.Name, 16, FontStyle.Regular);
-            int width = button8.Size.Width;
-            int height = button8.Height;
-            int change = 20;
-            button8.Size = new Size(width - change, height - change);
-            button8.Location = new Point(button8.Location.X + (change / 2), button8.Location.Y + (change / 2));
-
-
-        }
-
-        private void Button1_MouseEnter(object sender, EventArgs e)
-        {
-            button1.Font = new Font(button1.Font.Name, 32, FontStyle.Regular);
-            int width = button1.Size.Width;
-            int height = button1.Height;
-            int change = 20;
-            button1.Size = new Size(width + change, height + change);
-            button1.Location = new Point(button1.Location.X - (change / 2), button1.Location.Y - (change / 2));
-
-        }
-
-        private void Button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.Font = new Font(button1.Font.Name, 16, FontStyle.Regular);
-            int width = button1.Size.Width;
-            int height = button1.Height;
-            int change = 20;
-            button1.Size = new Size(width - change, height - change);
-            button1.Location = new Point(button1.Location.X + (change / 2), button1.Location.Y + (change / 2));
-
-        }
-
-        private void Button2_MouseEnter(object sender, EventArgs e)
-        {
-            button2.Font = new Font(button2.Font.Name, 32, FontStyle.Regular);
-            int width = button2.Size.Width;
-            int height = button2.Height;
-            int change = 20;
-            button2.Size = new Size(width + change, height + change);
-            button2.Location = new Point(button2.Location.X - (change / 2), button2.Location.Y - (change / 2));
-
-        }
-
-        private void Button2_MouseLeave(object sender, EventArgs e)
-        {
-            button2.Font = new Font(button2.Font.Name, 16, FontStyle.Regular);
-            int width = button2.Size.Width;
-            int height = button2.Height;
-            int change = 20;
-            button2.Size = new Size(width - change, height - change);
-            button2.Location = new Point(button2.Location.X + (change / 2), button2.Location.Y + (change / 2));
-
-        }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -881,39 +705,18 @@ namespace FinalYearProjectDemo
                         highlightNum = 1;
                         canClick = false;
                         break;
-                  
-
-
                 }
             }
         }
 
-        private void Button10_Click(object sender, EventArgs e)
+        private void autoFillButton_Click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
             for (int i = 0; i < currentWord.Length; i++)
             {
                 SendKeys.Send("{BACKSPACE}");
             }
-            SendKeys.Send(button10.Text);
-        }
-
-        private void Button11_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < currentWord.Length; i++)
-            {
-                SendKeys.Send("{BACKSPACE}");
-            }
-            SendKeys.Send(button11.Text);
-
-        }
-
-        private void Button12_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < currentWord.Length; i++)
-            {
-                SendKeys.Send("{BACKSPACE}");
-            }
-            SendKeys.Send(button12.Text);
+            SendKeys.Send(b.Text);
         }
     }
 }
