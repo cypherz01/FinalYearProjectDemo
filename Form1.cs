@@ -1,14 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace FinalYearProjectDemo
 {
@@ -28,15 +26,15 @@ namespace FinalYearProjectDemo
 
         class keyboardLayout
         {
-            public int id { get; set; }
-            public String button1 { get; set; }
-            public String button2 { get; set; }
-            public String button3 { get; set; }
-            public String button4 { get; set; }
-            public String button5 { get; set; }
-            public String button6 { get; set; }
-            public String button7 { get; set; }
-            public String button8 { get; set; }
+            public int Id { get; set; }
+            public String Button1 { get; set; }
+            public String Button2 { get; set; }
+            public String Button3 { get; set; }
+            public String Button4 { get; set; }
+            public String Button5 { get; set; }
+            public String Button6 { get; set; }
+            public String Button7 { get; set; }
+            public String Button8 { get; set; }
 
         }
 
@@ -78,6 +76,7 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
+            //this can be changed
             button1.Text = "controls";
             button2.Text = "A B C D E F";
             button3.Text = "G H I J K L";
@@ -102,8 +101,8 @@ namespace FinalYearProjectDemo
             InitializeComponent();
             initializeScreenFormat();
 
-            var  WordsFile = File.ReadAllLines("C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\words.txt");
-            layoutFile = "C:\\Users\\csf16cut\\source\\repos\\cypherz01\\FinalYearProjectDemo\\Layout.JSON";
+            var WordsFile = File.ReadAllLines("words.txt");
+            layoutFile = "layout.JSON";
             words = new List<string>(WordsFile);
 
         }
@@ -237,16 +236,16 @@ namespace FinalYearProjectDemo
 
                 foreach (var item in layouts)
                 {
-                    if (item.id == id)
+                    if (item.Id == id)
                     {
-                        button1.Text = item.button1;
-                        button2.Text = item.button2;
-                        button3.Text = item.button3;
-                        button4.Text = item.button4;
-                        button5.Text = item.button5;
-                        button6.Text = item.button6;
-                        button7.Text = item.button7;
-                        button8.Text = item.button8;
+                        button1.Text = item.Button1;
+                        button2.Text = item.Button2;
+                        button3.Text = item.Button3;
+                        button4.Text = item.Button4;
+                        button5.Text = item.Button5;
+                        button6.Text = item.Button6;
+                        button7.Text = item.Button7;
+                        button8.Text = item.Button8;
                     }
                 }
             }
@@ -269,61 +268,24 @@ namespace FinalYearProjectDemo
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            Button b = (Button)sender;
+           
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 2;
                     updateLayout(2);
                     break;
-                case 2:
-                    SendKeys.Send("a");
-                    currentWord += "a";
-                    populatePredictingWords(currentWord);
-                    
-                    break;
-                case 3:
-                    SendKeys.Send("g");
-                    currentWord += "g";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("m");
-                    currentWord += "m";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("s");
-                    currentWord += "s";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 6:
-                    SendKeys.Send("y");
-                    currentWord += "y";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 8;
                     updateLayout(8);
                     break;
-                case 8:
-                    SendKeys.Send("0");
+                default:
+                    SendKeys.Send(b.Text);
+                    currentWord += b.Text;
+                    populatePredictingWords(currentWord);
                     break;
-                case 9:
-                    SendKeys.Send("2");
-                    break;
-                case 10:
-                    SendKeys.Send("4");
-                    break;
-                case 11:
-                    SendKeys.Send("6");
-                    break;
-                case 12:
-                    SendKeys.Send("8");
-                    break;
-                case 13:
-                    SendKeys.Send("!");
-                    break;
+
             }
 
 
@@ -332,59 +294,24 @@ namespace FinalYearProjectDemo
         private void Button3_Click(object sender, EventArgs e)
         {
 
+            Button b = (Button)sender;
+
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 3;
                     updateLayout(3);
                     break;
-                case 2:
-                    SendKeys.Send("b");
-                    currentWord += "b";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 3:
-                    SendKeys.Send("h");
-                    currentWord += "h";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("n");
-                    currentWord += "n";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("t");
-                    currentWord += "t";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 6:
-                    SendKeys.Send("z");
-                    currentWord += "z";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 9;
                     updateLayout(9);
                     break;
-                case 8:
-                    SendKeys.Send("1");
+                default:
+                    SendKeys.Send(b.Text);
+                    currentWord += b.Text;
+                    populatePredictingWords(currentWord);
                     break;
-                case 9:
-                    SendKeys.Send("3");
-                    break;
-                case 10:
-                    SendKeys.Send("5");
-                    break;
-                case 11:
-                    SendKeys.Send("7");
-                    break;
-                case 12:
-                    SendKeys.Send("9");
-                    break;
-                case 13:
-                    SendKeys.Send("?");
-                    break;
+
             }
 
 
@@ -392,217 +319,107 @@ namespace FinalYearProjectDemo
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 4;
                     updateLayout(4);
                     break;
-                case 2:
-                    SendKeys.Send("c");
-                    currentWord += "c";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 3:
-                    SendKeys.Send("i");
-                    currentWord += "i";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("o");
-                    currentWord += "o";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("u");
-                    currentWord += "u";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 10;
                     updateLayout(10);
                     break;
-                case 13:
-                    SendKeys.Send(".");
+                default:
+                    SendKeys.Send(b.Text);
+                    currentWord += b.Text;
+                    populatePredictingWords(currentWord);
                     break;
+
             }
 
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 5;
                     updateLayout(5);
                     break;
-                case 2:
-                    SendKeys.Send("d");
-                    currentWord += "d";
-                    populatePredictingWords(currentWord);
-
-                    break;
-                case 3:
-                    SendKeys.Send("j");
-                    currentWord += "j";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("p");
-                    currentWord += "p";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("v");
-                    currentWord += "v";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 11;
                     updateLayout(11);
                     break;
-                case 13:
-                    SendKeys.Send("*");
+                default:
+                    SendKeys.Send(b.Text);
+                    currentWord += b.Text;
+                    populatePredictingWords(currentWord);
                     break;
+
             }
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 6;
                     updateLayout(6);
                     break;
-                case 2:
-                    SendKeys.Send("e");
-                    currentWord += "e";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 3:
-                    SendKeys.Send("k");
-                    currentWord += "k";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("q");
-                    currentWord += "q";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("w");
-                    currentWord += "w";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 12;
                     updateLayout(12);
                     break;
-                case 13:
-                    SendKeys.Send("/");
+                default:
+                    SendKeys.Send(b.Text);
+                    currentWord += b.Text;
+                    populatePredictingWords(currentWord);
                     break;
+
             }
         }
 
 
         private void Button7_Click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+
             switch (layoutNum)
             {
                 case 1:
                     layoutNum = 7;
                     updateLayout(7);
                     break;
-                case 2:
-                    SendKeys.Send("f");
-                    currentWord += "f";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 3:
-                    SendKeys.Send("l");
-                    currentWord += "l";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 4:
-                    SendKeys.Send("r");
-                    currentWord += "r";
-                    populatePredictingWords(currentWord);
-                    break;
-                case 5:
-                    SendKeys.Send("x");
-                    currentWord += "x";
-                    populatePredictingWords(currentWord);
-                    break;
                 case 7:
                     layoutNum = 13;
                     updateLayout(13);
                     break;
-                case 13:
-                    SendKeys.Send("\\");
-                    break;
+                default:
+
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if ((e.KeyCode == Keys.Tab)&&(canClick))
-            {
-                switch (highlightNum)
-            {
-                case 2:
-                        panel1.BackColor = Color.Yellow;
-                        Button1_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 3:
-                        panel1.BackColor = Color.Yellow;
-                        Button2_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 4:
-                        panel1.BackColor = Color.Yellow;
-                        Button3_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 5:
-                        panel1.BackColor = Color.Yellow;
-                        Button4_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 6:
-                        panel1.BackColor = Color.Yellow;
-                        Button5_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 7:
-                        panel1.BackColor = Color.Yellow;
-                        Button6_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 8:
-                        panel1.BackColor = Color.Yellow;
-                        Button7_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                case 0:
-                        panel1.BackColor = Color.Yellow;
-                        Button8_Click(sender, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;              
-            }
-            }
-        }
 
         private void Button8_Click(object sender, EventArgs e)
         {
@@ -717,6 +534,11 @@ namespace FinalYearProjectDemo
                 SendKeys.Send("{BACKSPACE}");
             }
             SendKeys.Send(b.Text);
+        }
+
+        public static bool CaplockActive()
+        {
+            return Control.IsKeyLocked(Keys.CapsLock);
         }
     }
 }
