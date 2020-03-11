@@ -8,8 +8,28 @@ using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
+
 namespace FinalYearProjectDemo
 {
+
+    class WordObj
+    {
+        public String word { get; set; }
+        public int frequency { get; set; }
+
+        public static WordObj FromCsv(string csvline)
+        {
+            string[] values = csvline.Split(',');
+            WordObj wordObj = new WordObj();
+
+            wordObj.word = values[0];
+            wordObj.frequency = Convert.ToInt32(values[1]);
+            return wordObj;
+
+    }
+
+    }
+
     public partial class Form1 : Form
     {
 
@@ -41,26 +61,49 @@ namespace FinalYearProjectDemo
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
-        private List<string> words = new List<string>();
+       
+        private List<WordObj> words = new List<WordObj>();
         private String currentWord;
         private String layoutFile;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
         {
-            var resultList = from name in words
-                             where name.Contains(currentWord)
-                             select name;
+            List<WordObj> resultList = new List<WordObj>();
 
             try
             {
-                button10.Text = resultList.ElementAt(1);
-                button11.Text = resultList.ElementAt(2);
-                button12.Text = resultList.ElementAt(3);
+                foreach (var item in words)
+                {
+                    
+                    if (item.word.StartsWith(currentWord))
+                    {
+                        resultList.Add(item);
+                        
+
+                    }
+                }
+
+                resultList.OrderBy(words => words.frequency);
+                
+                button10.Text = resultList.ElementAt(0).word;
+                button11.Text = resultList.ElementAt(1).word;
+                button12.Text = resultList.ElementAt(2).word;
                 
             }
             catch (Exception e) { };
 
+        }
+
+        public void loadFiles()
+        {
+            layoutFile = "layout.JSON";
+
+                words = File.ReadAllLines("words.csv")
+                .Select(v => WordObj.FromCsv(v))
+                .ToList();
+
+            
         }
 
         public void initializeScreenFormat()
@@ -76,15 +119,8 @@ namespace FinalYearProjectDemo
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-            //this can be changed
-            button1.Text = "controls";
-            button2.Text = "A B C D E F";
-            button3.Text = "G H I J K L";
-            button4.Text = "M N O P Q R";
-            button5.Text = "S T U V W X";
-            button6.Text = "Y Z";
-            button7.Text = "1 2 3 4...";
-            button8.Text = "space";
+            
+            updateLayout(1);
 
             layoutNum = 1;
             highlightNum = 1;
@@ -98,12 +134,9 @@ namespace FinalYearProjectDemo
         }
         public Form1()
         {
+            loadFiles();
             InitializeComponent();
             initializeScreenFormat();
-
-            var WordsFile = File.ReadAllLines("words.txt");
-            layoutFile = "layout.JSON";
-            words = new List<string>(WordsFile);
 
         }
 
