@@ -49,7 +49,7 @@ namespace FinalYearProjectDemo
         public void populatePredictingWords(String currentWord)
         {
             var resultList = from name in words
-                             where name.StartsWith(currentWord)
+                             where name.Contains(currentWord)
                              select name;
 
             try
@@ -281,10 +281,20 @@ namespace FinalYearProjectDemo
                     updateLayout(8);
                     break;
                 default:
-                    SendKeys.Send(b.Text);
-                    currentWord += b.Text;
-                    populatePredictingWords(currentWord);
-                    break;
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
 
@@ -307,10 +317,20 @@ namespace FinalYearProjectDemo
                     updateLayout(9);
                     break;
                 default:
-                    SendKeys.Send(b.Text);
-                    currentWord += b.Text;
-                    populatePredictingWords(currentWord);
-                    break;
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
 
@@ -332,10 +352,20 @@ namespace FinalYearProjectDemo
                     updateLayout(10);
                     break;
                 default:
-                    SendKeys.Send(b.Text);
-                    currentWord += b.Text;
-                    populatePredictingWords(currentWord);
-                    break;
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
 
@@ -356,10 +386,20 @@ namespace FinalYearProjectDemo
                     updateLayout(11);
                     break;
                 default:
-                    SendKeys.Send(b.Text);
-                    currentWord += b.Text;
-                    populatePredictingWords(currentWord);
-                    break;
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
         }
@@ -379,10 +419,20 @@ namespace FinalYearProjectDemo
                     updateLayout(12);
                     break;
                 default:
-                    SendKeys.Send(b.Text);
-                    currentWord += b.Text;
-                    populatePredictingWords(currentWord);
-                    break;
+                    if (!CaplockActive())
+                    {
+                        SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
+                    else
+                    {
+                        SendKeys.Send(b.Text);
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
+                        break;
+                    }
 
             }
         }
@@ -407,6 +457,8 @@ namespace FinalYearProjectDemo
                     if (!CaplockActive())
                     {
                         SendKeys.Send(b.Text.ToLower());
+                        currentWord += b.Text;
+                        populatePredictingWords(currentWord);
                         break;
                     }
                     else
