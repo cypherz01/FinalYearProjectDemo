@@ -12,24 +12,6 @@ using Newtonsoft.Json;
 namespace FinalYearProjectDemo
 {
 
-    class WordObj
-    {
-        public String word { get; set; }
-        public int frequency { get; set; }
-
-        public static WordObj FromCsv(string csvline)
-        {
-            string[] values = csvline.Split(',');
-            WordObj wordObj = new WordObj();
-
-            wordObj.word = values[0];
-            wordObj.frequency = Convert.ToInt32(values[1]);
-            return wordObj;
-
-    }
-
-    }
-
     public partial class Form1 : Form
     {
 
@@ -76,7 +58,7 @@ namespace FinalYearProjectDemo
                 foreach (var item in words)
                 {
                     
-                    if (item.word.StartsWith(currentWord))
+                    if ((item.word.StartsWith(currentWord))|| (item.word.StartsWith(currentWord.ToLowerInvariant())))
                     {
                         resultList.Add(item);
                         
@@ -287,6 +269,9 @@ namespace FinalYearProjectDemo
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (groupBox1.Visible == false) {
+                groupBox1.Visible = true;
+            }
             if (layoutNum == 1)
             {
                 layoutNum = 6;
@@ -316,14 +301,16 @@ namespace FinalYearProjectDemo
                 default:
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -352,14 +339,16 @@ namespace FinalYearProjectDemo
                 default:
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -387,14 +376,16 @@ namespace FinalYearProjectDemo
                 default:
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -421,14 +412,16 @@ namespace FinalYearProjectDemo
                 default:
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -454,14 +447,16 @@ namespace FinalYearProjectDemo
                 default:
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -473,6 +468,11 @@ namespace FinalYearProjectDemo
 
         private void Button7_Click(object sender, EventArgs e)
         {
+            if(layoutNum == 1)
+            {
+                groupBox1.Visible = false;
+            }
+
             Button b = (Button)sender;
 
             switch (layoutNum)
@@ -489,14 +489,16 @@ namespace FinalYearProjectDemo
 
                     if (!CaplockActive())
                     {
-                        SendKeys.Send(b.Text.ToLower());
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
                     }
                     else
                     {
-                        SendKeys.Send(b.Text);
+                        String output = b.Text.ToLower();
+                        SendKeys.Send(output);
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -555,55 +557,55 @@ namespace FinalYearProjectDemo
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((e.Button == MouseButtons.Left) && (canClick))
+            if ((e.Button == MouseButtons.Right) && (canClick))
             {
                 switch (highlightNum)
                 {
                     case 2:
                         panel1.BackColor = Color.Yellow;
-                        Button1_Click(sender, e);
+                        Button1_Click(button1, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 3:
                         panel1.BackColor = Color.Yellow;
-                        Button2_Click(sender, e);
+                        Button2_Click(button2, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 4:
                         panel1.BackColor = Color.Yellow;
-                        Button3_Click(sender, e);
+                        Button3_Click(button3, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 5:
                         panel1.BackColor = Color.Yellow;
-                        Button4_Click(sender, e);
+                        Button4_Click(button4, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 6:
                         panel1.BackColor = Color.Yellow;
-                        Button5_Click(sender, e);
+                        Button5_Click(button5, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 7:
                         panel1.BackColor = Color.Yellow;
-                        Button6_Click(sender, e);
+                        Button6_Click(button6, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 8:
                         panel1.BackColor = Color.Yellow;
-                        Button7_Click(sender, e);
+                        Button7_Click(button7, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
                     case 0:
                         panel1.BackColor = Color.Yellow;
-                        Button8_Click(sender, e);
+                        Button8_Click(button8, e);
                         highlightNum = 1;
                         canClick = false;
                         break;
@@ -619,6 +621,8 @@ namespace FinalYearProjectDemo
                 SendKeys.Send("{BACKSPACE}");
             }
             SendKeys.Send(b.Text);
+            SendKeys.Send(" ");
+            currentWord = "";
         }
 
         public static bool CaplockActive()
@@ -626,4 +630,23 @@ namespace FinalYearProjectDemo
             return Control.IsKeyLocked(Keys.CapsLock);
         }
     }
+
+    class WordObj
+    {
+        public String word { get; set; }
+        public int frequency { get; set; }
+
+        public static WordObj FromCsv(string csvline)
+        {
+            string[] values = csvline.Split(',');
+            WordObj wordObj = new WordObj();
+
+            wordObj.word = values[0];
+            wordObj.frequency = Convert.ToInt32(values[1]);
+            return wordObj;
+
+        }
+
+    }
+
 }
