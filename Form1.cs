@@ -26,7 +26,7 @@ namespace FinalYearProjectDemo
             }
         }
 
-        class keyboardLayout
+        class KeyboardLayout
         {
             public int Id { get; set; }
             public String Button1 { get; set; }
@@ -45,8 +45,10 @@ namespace FinalYearProjectDemo
         private Boolean canClick;
        
         private List<WordObj> words = new List<WordObj>();
+        private List<Panel> panels = new List<Panel>();
         private String currentWord;
         private String layoutFile;
+        private int layout;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
@@ -88,11 +90,43 @@ namespace FinalYearProjectDemo
             
         }
 
+        public void LoadPanels()
+        {
+            panels.Clear();
+            if (layout == 1)
+            {
+                panel1.Visible = true;
+                panel1.SendToBack();
+                panel13.Visible = false;
+
+                panels.Add(panel2);
+                panels.Add(panel3);
+                panels.Add(panel4);
+                panels.Add(panel5);
+                panels.Add(panel6);
+                panels.Add(panel7);
+                panels.Add(panel8);
+                panels.Add(panel9);
+            }
+            else if (layout == 2)
+            {
+                panel3.Visible = true;
+                panel13.SendToBack();
+                panel1.Visible = false;
+                panels.Add(panel10);
+                panels.Add(panel11);
+                panels.Add(panel12);
+            }
+
+        }
+
         public void initializeScreenFormat()
         {
-            Timer timer = new Timer();
-            timer.Interval = (1 * 750); // 0.75 seconds
-            timer.Tick += new EventHandler(timer_Tick);
+            layout = 1;
+            LoadPanels();
+
+            Timer timer = new Timer {Interval = (1 * 750)};
+            timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
 
 
@@ -105,13 +139,10 @@ namespace FinalYearProjectDemo
             updateLayout(1);
 
             layoutNum = 1;
-            highlightNum = 1;
+            highlightNum = 0;
             canClick = true;
-            panel1.Visible = true;
-            panel1.Top = button2.Top + 10;
-            panel1.Left = button2.Left + 10;
-            panel1.Height = button2.Height;
-            panel1.SendToBack();
+            
+
 
         }
         public Form1()
@@ -122,123 +153,36 @@ namespace FinalYearProjectDemo
 
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            if ((layoutNum == 6) || (layoutNum == 8) || (layoutNum == 9) || (layoutNum == 10)
-                || (layoutNum == 11) || (layoutNum == 12))
-            {
-                switch (highlightNum)
-                {
-                    case 1:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button1.Height;
-                        panel1.Top = button1.Top + 10;
-                        panel1.Left = button1.Left + 10;
-                        break;
-                    case 2:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button2.Height;
-                        panel1.Top = button2.Top + 10;
-                        panel1.Left = button2.Left + 10;
-                        break;
-                    case 3:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = button3.Height;
-                        panel1.Top = button3.Top + 10;
-                        panel1.Left = button3.Left + 10;
-                        break;
-                }
+
+            canClick = true;
+            if (layout == 1) { 
+            panel1.BackColor = Color.Red;
+            highlightNum = (highlightNum + 1) % panels.Count;
+
+            string name = panels.ElementAt(highlightNum).Name;
+            panel1.Height = panels.ElementAt(highlightNum).Height;
+            panel1.Width = panels.ElementAt(highlightNum).Width;
+            panel1.Top = panels.ElementAt(highlightNum).Top + 10;
+            panel1.Left = panels.ElementAt(highlightNum).Left + 10;
+        }
+        else if(layout ==2){
+                panel13.BackColor = Color.Red;
+                highlightNum = (highlightNum + 1) % panels.Count;
+
+                string name = panels.ElementAt(highlightNum).Name;
+                panel13.Height = panels.ElementAt(highlightNum).Height;
+                panel13.Width = panels.ElementAt(highlightNum).Width;
+                panel13.Top = panels.ElementAt(highlightNum).Top + 10;
+                panel13.Left = panels.ElementAt(highlightNum).Left + 10;
+
+
             }
-            else
-            {
-                switch (highlightNum)
-                {
-                    case 1:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel2.Height;
-                        panel1.Width = panel2.Width;
-                        panel1.Top = panel2.Top + 10;
-                        panel1.Left = panel2.Left + 10;
-                       
-                        break;
-                    case 2:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel3.Height;
-                        panel1.Width = panel3.Width;
-                        panel1.Top = panel3.Top + 10;
-                        panel1.Left = panel3.Left + 10;
-                        
-                        
-                        break;
-                    case 3:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel4.Height;
-                        panel1.Width = panel4.Width;
-                        panel1.Top = panel4.Top + 10;
-                        panel1.Left = panel4.Left + 10;
-                        
-                        break;
-                    case 4:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel5.Height;
-                        panel1.Width = panel5.Width;
-                        panel1.Top = panel5.Top + 10;
-                        panel1.Left = panel5.Left + 10;
-                        
-                        break;
-                    case 5:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel6.Height;
-                        panel1.Width = panel6.Width;
-                        panel1.Top = panel6.Top + 10;
-                        panel1.Left = panel6.Left + 10;
-                       
-                        break;
-                    case 6:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel7.Height;
-                        panel1.Width = panel7.Width;
-                        panel1.Top = panel7.Top + 10;
-                        panel1.Left = panel7.Left + 10;
-                        break;
-                    case 7:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel8.Height;
-                        panel1.Width = panel8.Width;
-                        panel1.Top = panel8.Top + 10;
-                        panel1.Left = panel8.Left + 10;
-                        break;
-                    case 8:
-                        canClick = true;
-                        panel1.BackColor = Color.Red;
-                        highlightNum = (highlightNum + 1) % 9;
-                        panel1.Height = panel9.Height;
-                        panel1.Width = panel9.Width;
-                        panel1.Top = panel9.Top + 10;
-                        panel1.Left = panel9.Left + 10;
-                        break;
-                }
-            }
+
+
+
+
 
         }
 
@@ -247,7 +191,7 @@ namespace FinalYearProjectDemo
             using (StreamReader r = new StreamReader(layoutFile))
             {
                 string json = r.ReadToEnd();
-                List<keyboardLayout> layouts = JsonConvert.DeserializeObject<List<keyboardLayout>>(json);
+                List<KeyboardLayout> layouts = JsonConvert.DeserializeObject<List<KeyboardLayout>>(json);
 
                 foreach (var item in layouts)
                 {
@@ -519,7 +463,7 @@ namespace FinalYearProjectDemo
         {
             if (radioButton1.Checked)
             {
-                panel1.Visible = true;
+                //panel1.Visible = true;
                 KeyPreview = true;
             }
             else
@@ -561,52 +505,52 @@ namespace FinalYearProjectDemo
             {
                 switch (highlightNum)
                 {
-                    case 2:
+                    case 0:
                         panel1.BackColor = Color.Yellow;
                         Button1_Click(button1, e);
-                        highlightNum = 1;
+                        highlightNum = 0;
+                        canClick = false;
+                        break;
+                    case 1:
+                        panel1.BackColor = Color.Yellow;
+                        Button2_Click(button2, e);
+                        highlightNum = 7;
+                        canClick = false;
+                        break;
+                    case 2:
+                        panel1.BackColor = Color.Yellow;
+                        Button3_Click(button3, e);
+                        highlightNum = 7;
                         canClick = false;
                         break;
                     case 3:
                         panel1.BackColor = Color.Yellow;
-                        Button2_Click(button2, e);
-                        highlightNum = 1;
+                        Button4_Click(button4, e);
+                        highlightNum = 7;
                         canClick = false;
                         break;
                     case 4:
                         panel1.BackColor = Color.Yellow;
-                        Button3_Click(button3, e);
-                        highlightNum = 1;
+                        Button5_Click(button5, e);
+                        highlightNum = 7;
                         canClick = false;
                         break;
                     case 5:
                         panel1.BackColor = Color.Yellow;
-                        Button4_Click(button4, e);
-                        highlightNum = 1;
+                        Button6_Click(button6, e);
+                        highlightNum = 7;
                         canClick = false;
                         break;
                     case 6:
                         panel1.BackColor = Color.Yellow;
-                        Button5_Click(button5, e);
-                        highlightNum = 1;
+                        Button7_Click(button7, e);
+                        highlightNum = 7;
                         canClick = false;
                         break;
                     case 7:
                         panel1.BackColor = Color.Yellow;
-                        Button6_Click(button6, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                    case 8:
-                        panel1.BackColor = Color.Yellow;
-                        Button7_Click(button7, e);
-                        highlightNum = 1;
-                        canClick = false;
-                        break;
-                    case 0:
-                        panel1.BackColor = Color.Yellow;
                         Button8_Click(button8, e);
-                        highlightNum = 1;
+                        highlightNum = 7;
                         canClick = false;
                         break;
                 }

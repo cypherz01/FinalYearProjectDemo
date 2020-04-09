@@ -54,12 +54,14 @@ namespace FinalYearProjectDemo
             this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel13 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,9 +72,10 @@ namespace FinalYearProjectDemo
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -105,7 +108,7 @@ namespace FinalYearProjectDemo
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(586, 955);
+            this.panel1.Location = new System.Drawing.Point(391, 421);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 18);
             this.panel1.TabIndex = 10;
@@ -141,7 +144,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(18, 12);
+            this.panel2.Location = new System.Drawing.Point(12, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 205);
             this.panel2.TabIndex = 12;
@@ -164,7 +167,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(328, 12);
+            this.panel3.Location = new System.Drawing.Point(316, 19);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(284, 205);
             this.panel3.TabIndex = 13;
@@ -173,7 +176,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(652, 12);
+            this.panel4.Location = new System.Drawing.Point(640, 19);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(275, 205);
             this.panel4.TabIndex = 13;
@@ -196,7 +199,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(652, 233);
+            this.panel5.Location = new System.Drawing.Point(640, 248);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(275, 205);
             this.panel5.TabIndex = 13;
@@ -219,7 +222,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel6.Controls.Add(this.button5);
-            this.panel6.Location = new System.Drawing.Point(652, 453);
+            this.panel6.Location = new System.Drawing.Point(640, 468);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(275, 205);
             this.panel6.TabIndex = 13;
@@ -242,7 +245,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel7.Controls.Add(this.button6);
-            this.panel7.Location = new System.Drawing.Point(328, 453);
+            this.panel7.Location = new System.Drawing.Point(316, 468);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(284, 205);
             this.panel7.TabIndex = 13;
@@ -265,7 +268,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel8.Controls.Add(this.button7);
-            this.panel8.Location = new System.Drawing.Point(18, 453);
+            this.panel8.Location = new System.Drawing.Point(12, 468);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(269, 205);
             this.panel8.TabIndex = 13;
@@ -288,7 +291,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel9.Controls.Add(this.button8);
-            this.panel9.Location = new System.Drawing.Point(18, 233);
+            this.panel9.Location = new System.Drawing.Point(12, 248);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(269, 205);
             this.panel9.TabIndex = 13;
@@ -298,20 +301,21 @@ namespace FinalYearProjectDemo
             this.groupBox1.Controls.Add(this.panel13);
             this.groupBox1.Controls.Add(this.panel12);
             this.groupBox1.Controls.Add(this.panel11);
+            this.groupBox1.Controls.Add(this.panel10);
             this.groupBox1.Location = new System.Drawing.Point(12, 690);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(920, 224);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // panel13
+            // panel12
             // 
-            this.panel13.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel13.Controls.Add(this.button12);
-            this.panel13.Location = new System.Drawing.Point(640, 19);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(275, 186);
-            this.panel13.TabIndex = 15;
+            this.panel12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel12.Controls.Add(this.button12);
+            this.panel12.Location = new System.Drawing.Point(640, 19);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(275, 186);
+            this.panel12.TabIndex = 15;
             // 
             // button12
             // 
@@ -325,14 +329,14 @@ namespace FinalYearProjectDemo
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
-            // panel12
+            // panel11
             // 
-            this.panel12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel12.Controls.Add(this.button11);
-            this.panel12.Location = new System.Drawing.Point(316, 19);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(284, 186);
-            this.panel12.TabIndex = 15;
+            this.panel11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel11.Controls.Add(this.button11);
+            this.panel11.Location = new System.Drawing.Point(316, 19);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(284, 186);
+            this.panel11.TabIndex = 15;
             // 
             // button11
             // 
@@ -346,14 +350,14 @@ namespace FinalYearProjectDemo
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
-            // panel11
+            // panel10
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel11.Controls.Add(this.button10);
-            this.panel11.Location = new System.Drawing.Point(6, 19);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(269, 186);
-            this.panel11.TabIndex = 14;
+            this.panel10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel10.Controls.Add(this.button10);
+            this.panel10.Location = new System.Drawing.Point(6, 19);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(269, 186);
+            this.panel10.TabIndex = 14;
             // 
             // button10
             // 
@@ -367,22 +371,39 @@ namespace FinalYearProjectDemo
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.autoFillButton_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Controls.Add(this.panel3);
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.panel4);
+            this.groupBox2.Controls.Add(this.panel8);
+            this.groupBox2.Controls.Add(this.panel9);
+            this.groupBox2.Controls.Add(this.panel7);
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Controls.Add(this.panel6);
+            this.groupBox2.Location = new System.Drawing.Point(12, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(920, 679);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Red;
+            this.panel13.Location = new System.Drawing.Point(291, 184);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(209, 18);
+            this.panel13.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(939, 961);
+            this.ClientSize = new System.Drawing.Size(1658, 961);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -401,9 +422,10 @@ namespace FinalYearProjectDemo
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,12 +454,14 @@ namespace FinalYearProjectDemo
         private Button button7;
         private Button button6;
         private GroupBox groupBox1;
-        private Panel panel13;
-        private Button button12;
         private Panel panel12;
-        private Button button11;
+        private Button button12;
         private Panel panel11;
+        private Button button11;
+        private Panel panel10;
         private Button button10;
+        private GroupBox groupBox2;
+        private Panel panel13;
     }
       
 }
