@@ -11,10 +11,8 @@ using Newtonsoft.Json;
 
 namespace FinalYearProjectDemo
 {
-
     public partial class Form1 : Form
     {
-
         //create parameters
         protected override CreateParams CreateParams
         {
@@ -37,13 +35,12 @@ namespace FinalYearProjectDemo
             public String Button6 { get; set; }
             public String Button7 { get; set; }
             public String Button8 { get; set; }
-
         }
 
         private int layoutNum;
         private int highlightNum;
         private Boolean canClick;
-       
+
         private List<WordObj> words = new List<WordObj>();
         private List<Panel> panels = new List<Panel>();
         private String currentWord;
@@ -54,40 +51,33 @@ namespace FinalYearProjectDemo
         public void populatePredictingWords(String currentWord)
         {
             List<WordObj> resultList = new List<WordObj>();
-
             try
             {
                 foreach (var item in words)
                 {
-                    
-                    if ((item.word.StartsWith(currentWord))|| (item.word.StartsWith(currentWord.ToLowerInvariant())))
+                    if ((item.word.StartsWith(currentWord)) || (item.word.StartsWith(currentWord.ToLowerInvariant())))
                     {
                         resultList.Add(item);
-                        
-
                     }
                 }
-
                 resultList.OrderBy(words => words.frequency);
-                
                 button10.Text = resultList.ElementAt(0).word;
                 button11.Text = resultList.ElementAt(1).word;
                 button12.Text = resultList.ElementAt(2).word;
-                
+                if (groupBox1.Visible == false)
+                {
+                    groupBox1.Visible= true;
+                }
             }
             catch (Exception e) { };
-
         }
 
         public void loadFiles()
         {
             layoutFile = "layout.JSON";
-
-                words = File.ReadAllLines("words.csv")
-                .Select(v => WordObj.FromCsv(v))
-                .ToList();
-
-            
+            words = File.ReadAllLines("words.csv")
+            .Select(v => WordObj.FromCsv(v))
+            .ToList();
         }
 
         public void LoadPanels()
@@ -125,49 +115,45 @@ namespace FinalYearProjectDemo
             layout = 1;
             LoadPanels();
 
-            Timer timer = new Timer {Interval = (1 * 750)};
+            Timer timer = new Timer { Interval = (1 * 750) };
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
-
 
             // StartPosition was set to FormStartPosition.Manual in the properties window.
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             int w = Width >= screen.Width ? screen.Width : (screen.Width) / 2;
             this.Size = new Size(w, screen.Height);
 
-            
             updateLayout(1);
+            groupBox1.Visible = false;
 
             layoutNum = 1;
             highlightNum = 0;
             canClick = true;
-            
-
-
         }
         public Form1()
         {
             loadFiles();
             InitializeComponent();
             initializeScreenFormat();
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
             canClick = true;
-            if (layout == 1) { 
-            panel1.BackColor = Color.Red;
-            highlightNum = (highlightNum + 1) % panels.Count;
+            if (layout == 1)
+            {
+                panel1.BackColor = Color.Red;
+                highlightNum = (highlightNum + 1) % panels.Count;
 
-            string name = panels.ElementAt(highlightNum).Name;
-            panel1.Height = panels.ElementAt(highlightNum).Height;
-            panel1.Width = panels.ElementAt(highlightNum).Width;
-            panel1.Top = panels.ElementAt(highlightNum).Top + 10;
-            panel1.Left = panels.ElementAt(highlightNum).Left + 10;
-        }
-        else if(layout ==2){
+                string name = panels.ElementAt(highlightNum).Name;
+                panel1.Height = panels.ElementAt(highlightNum).Height;
+                panel1.Width = panels.ElementAt(highlightNum).Width;
+                panel1.Top = panels.ElementAt(highlightNum).Top + 10;
+                panel1.Left = panels.ElementAt(highlightNum).Left + 10;
+            }
+            else if (layout == 2)
+            {
                 panel13.BackColor = Color.Red;
                 highlightNum = (highlightNum + 1) % panels.Count;
 
@@ -176,14 +162,7 @@ namespace FinalYearProjectDemo
                 panel13.Width = panels.ElementAt(highlightNum).Width;
                 panel13.Top = panels.ElementAt(highlightNum).Top + 10;
                 panel13.Left = panels.ElementAt(highlightNum).Left + 10;
-
-
             }
-
-
-
-
-
         }
 
         private void updateLayout(int id)
@@ -213,7 +192,8 @@ namespace FinalYearProjectDemo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (groupBox1.Visible == false) {
+            if (groupBox1.Visible == false)
+            {
                 groupBox1.Visible = true;
             }
             if (layoutNum == 1)
@@ -231,7 +211,6 @@ namespace FinalYearProjectDemo
         private void Button2_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-           
             switch (layoutNum)
             {
                 case 1:
@@ -261,15 +240,12 @@ namespace FinalYearProjectDemo
                     }
 
             }
-
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
 
             Button b = (Button)sender;
-
             switch (layoutNum)
             {
                 case 1:
@@ -299,8 +275,6 @@ namespace FinalYearProjectDemo
                     }
 
             }
-
-
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -334,7 +308,6 @@ namespace FinalYearProjectDemo
                         populatePredictingWords(currentWord);
                         break;
                     }
-
             }
 
         }
@@ -342,7 +315,6 @@ namespace FinalYearProjectDemo
         private void Button5_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
             switch (layoutNum)
             {
                 case 1:
@@ -370,14 +342,12 @@ namespace FinalYearProjectDemo
                         populatePredictingWords(currentWord);
                         break;
                     }
-
             }
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
             switch (layoutNum)
             {
                 case 1:
@@ -405,14 +375,13 @@ namespace FinalYearProjectDemo
                         populatePredictingWords(currentWord);
                         break;
                     }
-
             }
         }
 
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            if(layoutNum == 1)
+            if (layoutNum == 1)
             {
                 groupBox1.Visible = false;
             }
@@ -447,7 +416,6 @@ namespace FinalYearProjectDemo
                         populatePredictingWords(currentWord);
                         break;
                     }
-
             }
         }
 
@@ -476,7 +444,6 @@ namespace FinalYearProjectDemo
         private void Button_MouseEnter(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
             b.Font = new Font(b.Font.Name, 32, FontStyle.Regular);
             int width = b.Size.Width;
             int height = b.Height;
@@ -488,7 +455,6 @@ namespace FinalYearProjectDemo
         private void Button_MouseLeave(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
             b.Font = new Font(b.Font.Name, 16, FontStyle.Regular);
             int width = b.Size.Width;
             int height = b.Height;
@@ -567,6 +533,7 @@ namespace FinalYearProjectDemo
             SendKeys.Send(b.Text);
             SendKeys.Send(" ");
             currentWord = "";
+            groupBox1.Visible = false;
         }
 
         public static bool CaplockActive()
