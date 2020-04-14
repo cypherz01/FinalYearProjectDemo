@@ -68,6 +68,8 @@ namespace FinalYearProjectDemo
                 {
                     groupBox1.Visible= true;
                 }
+                layout = 2;
+                LoadPanels();
             }
             catch (Exception e) { };
         }
@@ -83,6 +85,7 @@ namespace FinalYearProjectDemo
         public void LoadPanels()
         {
             panels.Clear();
+            highlightNum = 7;
             if (layout == 1)
             {
                 panel1.Visible = true;
@@ -100,13 +103,15 @@ namespace FinalYearProjectDemo
             }
             else if (layout == 2)
             {
-                panel3.Visible = true;
+                panel13.Visible = true;
                 panel13.SendToBack();
                 panel1.Visible = false;
                 panels.Add(panel10);
                 panels.Add(panel11);
                 panels.Add(panel12);
+                panels.Add(panel14);
             }
+            
 
         }
 
@@ -140,6 +145,13 @@ namespace FinalYearProjectDemo
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            if (CaplockActive()){
+                label2.Text = "ON";
+            }else
+            {
+                label2.Text = "OFF";
+            }
+
             canClick = true;
             if (layout == 1)
             {
@@ -192,10 +204,7 @@ namespace FinalYearProjectDemo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (groupBox1.Visible == false)
-            {
-                groupBox1.Visible = true;
-            }
+            
             if (layoutNum == 1)
             {
                 layoutNum = 6;
@@ -431,7 +440,7 @@ namespace FinalYearProjectDemo
         {
             if (radioButton1.Checked)
             {
-                //panel1.Visible = true;
+                panel1.Visible = true;
                 KeyPreview = true;
             }
             else
@@ -467,7 +476,7 @@ namespace FinalYearProjectDemo
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((e.Button == MouseButtons.Right) && (canClick))
+            if ((e.Button == MouseButtons.Right) && (canClick) && (layout == 1))
             {
                 switch (highlightNum)
                 {
@@ -519,6 +528,46 @@ namespace FinalYearProjectDemo
                         highlightNum = 7;
                         canClick = false;
                         break;
+                }
+
+            }
+            else if ((e.Button == MouseButtons.Right) && (canClick) && (layout == 2))
+            {
+                switch (highlightNum)
+                {
+                    case 0:
+                        panel13.BackColor = Color.Yellow;
+                        autoFillButton_Click(button10, e);
+                        highlightNum = 0;
+                        canClick = false;
+                        layout = 1;
+                        LoadPanels();
+                        break;
+                    case 1:
+                        panel13.BackColor = Color.Yellow;
+                        autoFillButton_Click(button11, e);
+                        highlightNum = 0;
+                        canClick = false;
+                        layout = 1;
+                        LoadPanels();
+                        break;
+                    case 2:
+                        panel13.BackColor = Color.Yellow;
+                        autoFillButton_Click(button12, e);
+                        highlightNum = 7;
+                        canClick = false;
+                        layout = 1;
+                        LoadPanels();
+                        break;
+                    case 3:
+                        panel13.BackColor = Color.Yellow;
+                        canClick = false;
+                        layout = 1;
+                        LoadPanels();
+                        break;
+                    
+                   
+
                 }
             }
         }

@@ -54,6 +54,7 @@ namespace FinalYearProjectDemo
             this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -61,7 +62,10 @@ namespace FinalYearProjectDemo
             this.panel10 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,6 +80,7 @@ namespace FinalYearProjectDemo
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -108,17 +113,18 @@ namespace FinalYearProjectDemo
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(391, 421);
+            this.panel1.Location = new System.Drawing.Point(58, 612);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 18);
             this.panel1.TabIndex = 10;
+            this.panel1.Visible = false;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(12, 932);
+            this.radioButton1.Location = new System.Drawing.Point(12, 935);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(167, 30);
             this.radioButton1.TabIndex = 0;
@@ -132,7 +138,7 @@ namespace FinalYearProjectDemo
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(206, 932);
+            this.radioButton2.Location = new System.Drawing.Point(788, 935);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(144, 30);
             this.radioButton2.TabIndex = 11;
@@ -298,21 +304,30 @@ namespace FinalYearProjectDemo
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel14);
             this.groupBox1.Controls.Add(this.panel13);
             this.groupBox1.Controls.Add(this.panel12);
             this.groupBox1.Controls.Add(this.panel11);
             this.groupBox1.Controls.Add(this.panel10);
-            this.groupBox1.Location = new System.Drawing.Point(12, 690);
+            this.groupBox1.Location = new System.Drawing.Point(12, 674);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(920, 224);
+            this.groupBox1.Size = new System.Drawing.Size(920, 263);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Red;
+            this.panel13.Location = new System.Drawing.Point(295, 154);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(209, 18);
+            this.panel13.TabIndex = 16;
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel12.Controls.Add(this.button12);
-            this.panel12.Location = new System.Drawing.Point(640, 19);
+            this.panel12.Location = new System.Drawing.Point(640, 63);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(275, 186);
             this.panel12.TabIndex = 15;
@@ -333,7 +348,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel11.Controls.Add(this.button11);
-            this.panel11.Location = new System.Drawing.Point(316, 19);
+            this.panel11.Location = new System.Drawing.Point(316, 63);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(284, 186);
             this.panel11.TabIndex = 15;
@@ -354,7 +369,7 @@ namespace FinalYearProjectDemo
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel10.Controls.Add(this.button10);
-            this.panel10.Location = new System.Drawing.Point(6, 19);
+            this.panel10.Location = new System.Drawing.Point(6, 63);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(269, 186);
             this.panel10.TabIndex = 14;
@@ -388,20 +403,55 @@ namespace FinalYearProjectDemo
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
-            // panel13
+            // label1
             // 
-            this.panel13.BackColor = System.Drawing.Color.Red;
-            this.panel13.Location = new System.Drawing.Point(291, 184);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(209, 18);
-            this.panel13.TabIndex = 16;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(371, 940);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Caplock :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(479, 940);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 25);
+            this.label2.TabIndex = 17;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel14.Controls.Add(this.button9);
+            this.panel14.Location = new System.Drawing.Point(316, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(284, 41);
+            this.panel14.TabIndex = 16;
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(36, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(209, 35);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "Return";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1658, 961);
+            this.ClientSize = new System.Drawing.Size(1658, 1014);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.radioButton2);
@@ -426,6 +476,7 @@ namespace FinalYearProjectDemo
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,6 +513,10 @@ namespace FinalYearProjectDemo
         private Button button10;
         private GroupBox groupBox2;
         private Panel panel13;
+        private Label label1;
+        private Label label2;
+        private Panel panel14;
+        private Button button9;
     }
       
 }
