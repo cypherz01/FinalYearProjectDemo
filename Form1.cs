@@ -46,6 +46,7 @@ namespace FinalYearProjectDemo
         private String currentWord;
         private String layoutFile;
         private int layout;
+        private bool CaplockOveride;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
@@ -66,7 +67,7 @@ namespace FinalYearProjectDemo
                 button12.Text = resultList.ElementAt(2).word;
                 if (groupBox1.Visible == false)
                 {
-                    groupBox1.Visible= true;
+                    groupBox1.Visible = true;
                 }
                 layout = 2;
                 LoadPanels();
@@ -111,12 +112,13 @@ namespace FinalYearProjectDemo
                 panels.Add(panel12);
                 panels.Add(panel14);
             }
-            
+
 
         }
 
         public void initializeScreenFormat()
         {
+            CaplockOveride = false;
             layout = 1;
             LoadPanels();
 
@@ -145,9 +147,11 @@ namespace FinalYearProjectDemo
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (CaplockActive()){
+            if (CaplockActive(CaplockOveride))
+            {
                 label2.Text = "ON";
-            }else
+            }
+            else
             {
                 label2.Text = "OFF";
             }
@@ -204,11 +208,11 @@ namespace FinalYearProjectDemo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
             if (layoutNum == 1)
             {
-                layoutNum = 6;
-                updateLayout(6);
+                layoutNum = 14;
+                updateLayout(14);
             }
             else
             {
@@ -230,8 +234,11 @@ namespace FinalYearProjectDemo
                     layoutNum = 8;
                     updateLayout(8);
                     break;
+                case 14:
+                    SendKeys.Send("{BACKSPACE}");
+                    break;
                 default:
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -242,7 +249,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -265,8 +272,11 @@ namespace FinalYearProjectDemo
                     layoutNum = 9;
                     updateLayout(9);
                     break;
+                case 14:
+                    CaplockOveride = !CaplockOveride;
+                    break;
                 default:
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -277,7 +287,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -300,8 +310,22 @@ namespace FinalYearProjectDemo
                     layoutNum = 10;
                     updateLayout(10);
                     break;
+                case 14:
+                    if (layoutFile.Equals("layout.JSON"))
+                    {
+                        layoutFile = "layout2.JSON";
+                        layoutNum = 1;
+                        updateLayout(1);
+                    }
+                    else
+                    {
+                        layoutFile = "layout.JSON";
+                        layoutNum = 1;
+                        updateLayout(1);
+                    }
+                    break;
                 default:
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -312,7 +336,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -335,7 +359,7 @@ namespace FinalYearProjectDemo
                     updateLayout(11);
                     break;
                 default:
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -346,7 +370,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -368,7 +392,7 @@ namespace FinalYearProjectDemo
                     updateLayout(12);
                     break;
                 default:
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -379,7 +403,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -409,7 +433,7 @@ namespace FinalYearProjectDemo
                     break;
                 default:
 
-                    if (!CaplockActive())
+                    if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -420,7 +444,7 @@ namespace FinalYearProjectDemo
                     else
                     {
                         String output = b.Text.ToLower();
-                        SendKeys.Send(output);
+                        SendKeys.Send(output.ToUpper());
                         currentWord += b.Text;
                         populatePredictingWords(currentWord);
                         break;
@@ -565,8 +589,8 @@ namespace FinalYearProjectDemo
                         layout = 1;
                         LoadPanels();
                         break;
-                    
-                   
+
+
 
                 }
             }
@@ -585,28 +609,35 @@ namespace FinalYearProjectDemo
             groupBox1.Visible = false;
         }
 
-        public static bool CaplockActive()
+        public static bool CaplockActive(bool overide)
         {
-            return Control.IsKeyLocked(Keys.CapsLock);
-        }
-    }
-
-    class WordObj
-    {
-        public String word { get; set; }
-        public int frequency { get; set; }
-
-        public static WordObj FromCsv(string csvline)
-        {
-            string[] values = csvline.Split(',');
-            WordObj wordObj = new WordObj();
-
-            wordObj.word = values[0];
-            wordObj.frequency = Convert.ToInt32(values[1]);
-            return wordObj;
-
+            if (Control.IsKeyLocked(Keys.CapsLock) || (overide == true))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
+        class WordObj
+        {
+            public String word { get; set; }
+            public int frequency { get; set; }
+
+            public static WordObj FromCsv(string csvline)
+            {
+                string[] values = csvline.Split(',');
+                WordObj wordObj = new WordObj();
+
+                wordObj.word = values[0];
+                wordObj.frequency = Convert.ToInt32(values[1]);
+                return wordObj;
+
+            }
+
+        }
     }
 
 }
