@@ -93,6 +93,7 @@ namespace FinalYearProjectDemo
                 panel1.SendToBack();
                 panel13.Visible = false;
 
+
                 panels.Add(panel2);
                 panels.Add(panel3);
                 panels.Add(panel4);
@@ -112,6 +113,35 @@ namespace FinalYearProjectDemo
                 panels.Add(panel12);
                 panels.Add(panel14);
             }
+            else if (layout == 3)
+            {
+                panel1.Visible = true;
+                panel1.SendToBack();
+                panel13.Visible = false;
+
+                panels.Add(panel2);
+                panels.Add(panel3);
+                panels.Add(panel4);
+                panels.Add(panel9);
+
+            }
+            else
+            {
+                panel1.Visible = true;
+                panel1.SendToBack();
+                panel13.Visible = false;
+
+
+                panels.Add(panel2);
+                panels.Add(panel3);
+                panels.Add(panel4);
+                panels.Add(panel5);
+                panels.Add(panel6);
+                panels.Add(panel8);
+                panels.Add(panel9);
+
+            }
+
 
 
         }
@@ -157,18 +187,8 @@ namespace FinalYearProjectDemo
             }
 
             canClick = true;
-            if (layout == 1)
-            {
-                panel1.BackColor = Color.Red;
-                highlightNum = (highlightNum + 1) % panels.Count;
 
-                string name = panels.ElementAt(highlightNum).Name;
-                panel1.Height = panels.ElementAt(highlightNum).Height;
-                panel1.Width = panels.ElementAt(highlightNum).Width;
-                panel1.Top = panels.ElementAt(highlightNum).Top + 10;
-                panel1.Left = panels.ElementAt(highlightNum).Left + 10;
-            }
-            else if (layout == 2)
+            if (layout == 2)
             {
                 panel13.BackColor = Color.Red;
                 highlightNum = (highlightNum + 1) % panels.Count;
@@ -178,6 +198,19 @@ namespace FinalYearProjectDemo
                 panel13.Width = panels.ElementAt(highlightNum).Width;
                 panel13.Top = panels.ElementAt(highlightNum).Top + 10;
                 panel13.Left = panels.ElementAt(highlightNum).Left + 10;
+            }
+            else
+            {
+
+                panel1.BackColor = Color.Red;
+                highlightNum = (highlightNum + 1) % panels.Count;
+
+                string name = panels.ElementAt(highlightNum).Name;
+                panel1.Height = panels.ElementAt(highlightNum).Height;
+                panel1.Width = panels.ElementAt(highlightNum).Width;
+                panel1.Top = panels.ElementAt(highlightNum).Top + 10;
+                panel1.Left = panels.ElementAt(highlightNum).Left + 10;
+
             }
         }
 
@@ -192,14 +225,64 @@ namespace FinalYearProjectDemo
                 {
                     if (item.Id == id)
                     {
+                        layout = 1;
                         button1.Text = item.Button1;
                         button2.Text = item.Button2;
                         button3.Text = item.Button3;
-                        button4.Text = item.Button4;
-                        button5.Text = item.Button5;
-                        button6.Text = item.Button6;
-                        button7.Text = item.Button7;
+                        if (item.Button4 != "")
+                        {
+                            panel5.Visible = true;
+                            button4.Text = item.Button4;
+
+                        }
+                        else
+                        {
+                            panel5.Visible = false;
+                            layout = 3;
+                        }
+
+                        if (item.Button5 != "")
+                        {
+                            panel6.Visible = true;
+                            button5.Text = item.Button5;
+
+                        }
+                        else
+                        {
+                            panel6.Visible = false;
+                            layout = 3;
+                        }
+
+                        if (item.Button6 != "")
+                        {
+                            panel7.Visible = true;
+                            button6.Text = item.Button6;
+                        }
+                        else if (layout != 3)
+                        {
+                            panel7.Visible = false;
+                            layout = 4;
+                        }
+                        else
+                        {
+                            panel7.Visible = false;
+                            layout = 3;
+                        }
+
+                        if (item.Button7 != "")
+                        {
+                            panel8.Visible = true;
+                            button7.Text = item.Button7;
+                        }
+                        else
+                        {
+                            panel8.Visible = false;
+                            layout = 3;
+                        }
+
                         button8.Text = item.Button8;
+
+                        LoadPanels();
                     }
                 }
             }
@@ -500,7 +583,7 @@ namespace FinalYearProjectDemo
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((e.Button == MouseButtons.Right) && (canClick) && (layout == 1))
+            if ((e.Button == MouseButtons.Right) && (canClick) && (layout != 2))
             {
                 switch (highlightNum)
                 {

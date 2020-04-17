@@ -54,6 +54,8 @@ namespace FinalYearProjectDemo
             this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@ namespace FinalYearProjectDemo
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,11 +76,11 @@ namespace FinalYearProjectDemo
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -315,10 +315,30 @@ namespace FinalYearProjectDemo
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel14.Controls.Add(this.button9);
+            this.panel14.Location = new System.Drawing.Point(316, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(284, 41);
+            this.panel14.TabIndex = 16;
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(36, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(209, 35);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "Return";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.Red;
-            this.panel13.Location = new System.Drawing.Point(295, 154);
+            this.panel13.Location = new System.Drawing.Point(335, 154);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(209, 18);
             this.panel13.TabIndex = 16;
@@ -424,26 +444,6 @@ namespace FinalYearProjectDemo
             this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 17;
             // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel14.Controls.Add(this.button9);
-            this.panel14.Location = new System.Drawing.Point(316, 6);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(284, 41);
-            this.panel14.TabIndex = 16;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(36, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(209, 35);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Return";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,11 +472,11 @@ namespace FinalYearProjectDemo
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
