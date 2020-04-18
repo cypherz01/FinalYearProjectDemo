@@ -86,7 +86,7 @@ namespace FinalYearProjectDemo
         public void LoadPanels()
         {
             panels.Clear();
-            highlightNum = 7;
+            highlightNum = -1;
             if (layout == 1)
             {
                 panel1.Visible = true;
@@ -122,8 +122,7 @@ namespace FinalYearProjectDemo
                 panels.Add(panel2);
                 panels.Add(panel3);
                 panels.Add(panel4);
-                panels.Add(panel9);
-
+                panels.Add(panel5);
             }
             else
             {
@@ -131,15 +130,12 @@ namespace FinalYearProjectDemo
                 panel1.SendToBack();
                 panel13.Visible = false;
 
-
                 panels.Add(panel2);
                 panels.Add(panel3);
                 panels.Add(panel4);
                 panels.Add(panel5);
                 panels.Add(panel6);
-                panels.Add(panel8);
-                panels.Add(panel9);
-
+                panels.Add(panel7);
             }
 
 
@@ -214,6 +210,8 @@ namespace FinalYearProjectDemo
             }
         }
 
+        
+
         private void updateLayout(int id)
         {
             using (StreamReader r = new StreamReader(layoutFile))
@@ -229,22 +227,13 @@ namespace FinalYearProjectDemo
                         button1.Text = item.Button1;
                         button2.Text = item.Button2;
                         button3.Text = item.Button3;
-                        if (item.Button4 != "")
-                        {
-                            panel5.Visible = true;
-                            button4.Text = item.Button4;
-
-                        }
-                        else
-                        {
-                            panel5.Visible = false;
-                            layout = 3;
-                        }
+                        button4.Text = item.Button4;
 
                         if (item.Button5 != "")
                         {
                             panel6.Visible = true;
                             button5.Text = item.Button5;
+                            
 
                         }
                         else
@@ -258,15 +247,11 @@ namespace FinalYearProjectDemo
                             panel7.Visible = true;
                             button6.Text = item.Button6;
                         }
-                        else if (layout != 3)
-                        {
-                            panel7.Visible = false;
-                            layout = 4;
-                        }
                         else
                         {
                             panel7.Visible = false;
-                            layout = 3;
+                            
+                            
                         }
 
                         if (item.Button7 != "")
@@ -277,10 +262,23 @@ namespace FinalYearProjectDemo
                         else
                         {
                             panel8.Visible = false;
-                            layout = 3;
+                            if (layout != 3)
+                            {
+                                layout = 4;
+                            }
+                            
                         }
 
-                        button8.Text = item.Button8;
+                        if (item.Button8 != "")
+                        {
+                            panel9.Visible = true;
+                            button8.Text = item.Button8;
+                        }
+                        else
+                        {
+                            panel9.Visible = false;
+                            
+                        }
 
                         LoadPanels();
                     }
@@ -408,6 +406,14 @@ namespace FinalYearProjectDemo
                     }
                     break;
                 default:
+
+                    if (layout != 4)
+                    {
+                        SendKeys.Send(" ");
+                        currentWord = "";
+                        break;
+                    }
+
                     if (!CaplockActive(CaplockOveride))
                     {
                         String output = b.Text.ToLower();
@@ -473,6 +479,9 @@ namespace FinalYearProjectDemo
                 case 7:
                     layoutNum = 12;
                     updateLayout(12);
+                    break;
+                case 14:
+                    this.Close();
                     break;
                 default:
                     if (!CaplockActive(CaplockOveride))
@@ -596,43 +605,43 @@ namespace FinalYearProjectDemo
                     case 1:
                         panel1.BackColor = Color.Yellow;
                         Button2_Click(button2, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 2:
                         panel1.BackColor = Color.Yellow;
                         Button3_Click(button3, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 3:
                         panel1.BackColor = Color.Yellow;
                         Button4_Click(button4, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 4:
                         panel1.BackColor = Color.Yellow;
                         Button5_Click(button5, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 5:
                         panel1.BackColor = Color.Yellow;
                         Button6_Click(button6, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 6:
                         panel1.BackColor = Color.Yellow;
                         Button7_Click(button7, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                     case 7:
                         panel1.BackColor = Color.Yellow;
                         Button8_Click(button8, e);
-                        highlightNum = 7;
+                        highlightNum = -1;
                         canClick = false;
                         break;
                 }
@@ -648,7 +657,9 @@ namespace FinalYearProjectDemo
                         highlightNum = 0;
                         canClick = false;
                         layout = 1;
+                        layoutNum = 1;
                         LoadPanels();
+                        updateLayout(1);
                         break;
                     case 1:
                         panel13.BackColor = Color.Yellow;
@@ -656,7 +667,9 @@ namespace FinalYearProjectDemo
                         highlightNum = 0;
                         canClick = false;
                         layout = 1;
+                        layoutNum = 1;
                         LoadPanels();
+                        updateLayout(1);
                         break;
                     case 2:
                         panel13.BackColor = Color.Yellow;
@@ -664,13 +677,17 @@ namespace FinalYearProjectDemo
                         highlightNum = 7;
                         canClick = false;
                         layout = 1;
+                        layoutNum = 1;
                         LoadPanels();
+                        updateLayout(1);
                         break;
                     case 3:
                         panel13.BackColor = Color.Yellow;
                         canClick = false;
                         layout = 1;
+                        layoutNum = 1;
                         LoadPanels();
+                        updateLayout(1);
                         break;
 
 

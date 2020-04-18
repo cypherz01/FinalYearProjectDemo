@@ -59,11 +59,11 @@
 			"button1": "Return",
 			"button2": "Y",
 			"button3": "Z",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 7,
@@ -81,55 +81,55 @@
 			"button1": "Return",
 			"button2": "0",
 			"button3": "1",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 9,
 			"button1": "Return",
 			"button2": "2",
 			"button3": "3",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 10,
 			"button1": "Return",
 			"button2": "4",
 			"button3": "5",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 11,
 			"button1": "Return",
 			"button2": "6",
 			"button3": "7",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 12,
 			"button1": "Return",
 			"button2": "8",
 			"button3": "9",
-			"button4": "",
+			"button4": "Space",
 			"button5": "",
 			"button6": "",
 			"button7": "",
-			"button8": "Space"
+			"button8": ""
 		},
 		{
 			"id": 13,
@@ -149,8 +149,8 @@
 			"button3": "Caplock",
 			"button4": "Change Format",
 			"button5": "Change Mode",
-			"button6": "",
-			"button7": "Exit",
-			"button8": "Space"
+			"button6": "Exit",
+			"button7": "",
+			"button8": ""
 		}
 	]
