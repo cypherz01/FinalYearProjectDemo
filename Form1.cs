@@ -210,7 +210,7 @@ namespace FinalYearProjectDemo
             }
         }
 
-        
+
 
         private void updateLayout(int id)
         {
@@ -233,7 +233,7 @@ namespace FinalYearProjectDemo
                         {
                             panel6.Visible = true;
                             button5.Text = item.Button5;
-                            
+
 
                         }
                         else
@@ -250,8 +250,8 @@ namespace FinalYearProjectDemo
                         else
                         {
                             panel7.Visible = false;
-                            
-                            
+
+
                         }
 
                         if (item.Button7 != "")
@@ -266,7 +266,7 @@ namespace FinalYearProjectDemo
                             {
                                 layout = 4;
                             }
-                            
+
                         }
 
                         if (item.Button8 != "")
@@ -277,7 +277,7 @@ namespace FinalYearProjectDemo
                         else
                         {
                             panel9.Visible = false;
-                            
+
                         }
 
                         LoadPanels();
@@ -447,6 +447,18 @@ namespace FinalYearProjectDemo
                     layoutNum = 11;
                     updateLayout(11);
                     break;
+                case 14:
+                    if (radioButton1.Checked)
+                    {
+                        changeMode(true);
+                        radioButton2.Checked = true;
+                    }
+                    else
+                    {
+                        changeMode(false);
+                        radioButton1.Checked = true;
+                    }
+                    break;
                 default:
                     if (!CaplockActive(CaplockOveride))
                     {
@@ -552,17 +564,35 @@ namespace FinalYearProjectDemo
         }
 
 
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void changeMode(bool mode)
         {
-            if (radioButton1.Checked)
+            if (mode)
             {
                 panel1.Visible = true;
                 KeyPreview = true;
+
+                groupBox2.Enabled = false;
+                groupBox1.Enabled = false;
             }
             else
             {
                 panel1.Visible = false;
                 KeyPreview = false;
+
+                groupBox2.Enabled = true;
+                groupBox1.Enabled = true;
+            }
+        }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                changeMode(true);
+            }
+            else
+            {
+                changeMode(false);
             }
         }
 
