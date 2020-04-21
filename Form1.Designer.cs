@@ -37,8 +37,6 @@ namespace FinalYearProjectDemo
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,6 +64,10 @@ namespace FinalYearProjectDemo
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -118,33 +120,6 @@ namespace FinalYearProjectDemo
             this.panel1.Size = new System.Drawing.Size(209, 18);
             this.panel1.TabIndex = 10;
             this.panel1.Visible = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(12, 935);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(167, 30);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Binary Search";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(788, 935);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(144, 30);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Eyetracking";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -334,6 +309,9 @@ namespace FinalYearProjectDemo
             this.button9.TabIndex = 6;
             this.button9.Text = "Return";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button9.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel13
             // 
@@ -363,6 +341,8 @@ namespace FinalYearProjectDemo
             this.button12.Text = "button12";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.autoFillButton_Click);
+            this.button12.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button12.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel11
             // 
@@ -384,6 +364,8 @@ namespace FinalYearProjectDemo
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.autoFillButton_Click);
+            this.button11.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button11.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // panel10
             // 
@@ -405,6 +387,8 @@ namespace FinalYearProjectDemo
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.autoFillButton_Click);
+            this.button10.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button10.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // groupBox2
             // 
@@ -428,7 +412,7 @@ namespace FinalYearProjectDemo
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(371, 940);
+            this.label1.Location = new System.Drawing.Point(13, 955);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 16;
@@ -439,10 +423,52 @@ namespace FinalYearProjectDemo
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(479, 940);
+            this.label2.Location = new System.Drawing.Point(121, 955);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(760, 955);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 25);
+            this.label3.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(652, 955);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 25);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Input :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(431, 955);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 25);
+            this.label5.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(323, 955);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 25);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Layout :";
             // 
             // Form1
             // 
@@ -450,12 +476,14 @@ namespace FinalYearProjectDemo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1658, 1014);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -488,8 +516,6 @@ namespace FinalYearProjectDemo
         private Button button1;
         private Button button2;
         private Panel panel1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
@@ -517,6 +543,10 @@ namespace FinalYearProjectDemo
         private Label label2;
         private Panel panel14;
         private Button button9;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
       
 }

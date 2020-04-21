@@ -46,7 +46,8 @@ namespace FinalYearProjectDemo
         private String currentWord;
         private String layoutFile;
         private int layout;
-        private bool CaplockOveride;
+        private bool Caplock;
+        private bool Binarymode;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
@@ -61,6 +62,7 @@ namespace FinalYearProjectDemo
                         resultList.Add(item);
                     }
                 }
+
                 resultList.OrderBy(words => words.frequency);
                 button10.Text = resultList.ElementAt(0).word;
                 button11.Text = resultList.ElementAt(1).word;
@@ -69,10 +71,14 @@ namespace FinalYearProjectDemo
                 {
                     groupBox1.Visible = true;
                 }
+
                 layout = 2;
                 LoadPanels();
             }
-            catch (Exception e) { };
+            catch (Exception e) {
+                layout = 2;
+                LoadPanels();
+            };
         }
 
         public void loadFiles()
@@ -89,9 +95,12 @@ namespace FinalYearProjectDemo
             highlightNum = -1;
             if (layout == 1)
             {
-                panel1.Visible = true;
-                panel1.SendToBack();
-                panel13.Visible = false;
+                if (Binarymode)
+                {
+                    panel1.Visible = true;
+                    panel1.SendToBack();
+                    panel13.Visible = false;
+                }
 
 
                 panels.Add(panel2);
@@ -105,9 +114,13 @@ namespace FinalYearProjectDemo
             }
             else if (layout == 2)
             {
-                panel13.Visible = true;
-                panel13.SendToBack();
-                panel1.Visible = false;
+                if (Binarymode)
+                {
+                    panel13.Visible = true;
+                    panel13.SendToBack();
+                    panel1.Visible = false;
+                }
+
                 panels.Add(panel10);
                 panels.Add(panel11);
                 panels.Add(panel12);
@@ -115,9 +128,12 @@ namespace FinalYearProjectDemo
             }
             else if (layout == 3)
             {
-                panel1.Visible = true;
-                panel1.SendToBack();
-                panel13.Visible = false;
+                if (Binarymode)
+                {
+                    panel1.Visible = true;
+                    panel1.SendToBack();
+                    panel13.Visible = false;
+                }
 
                 panels.Add(panel2);
                 panels.Add(panel3);
@@ -126,9 +142,11 @@ namespace FinalYearProjectDemo
             }
             else
             {
-                panel1.Visible = true;
-                panel1.SendToBack();
-                panel13.Visible = false;
+                if(Binarymode){
+                    panel1.Visible = true;
+                    panel1.SendToBack();
+                    panel13.Visible = false;
+                }
 
                 panels.Add(panel2);
                 panels.Add(panel3);
@@ -144,7 +162,11 @@ namespace FinalYearProjectDemo
 
         public void initializeScreenFormat()
         {
-            CaplockOveride = false;
+            label5.Text = "A B C D E F";
+            label3.Text = "Binary Search";
+            Caplock = false;
+            Binarymode = true;
+            changeMode(Binarymode);
             layout = 1;
             LoadPanels();
 
@@ -173,7 +195,7 @@ namespace FinalYearProjectDemo
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (CaplockActive(CaplockOveride))
+            if (Caplock)
             {
                 label2.Text = "ON";
             }
@@ -319,7 +341,7 @@ namespace FinalYearProjectDemo
                     SendKeys.Send("{BACKSPACE}");
                     break;
                 default:
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -354,10 +376,10 @@ namespace FinalYearProjectDemo
                     updateLayout(9);
                     break;
                 case 14:
-                    CaplockOveride = !CaplockOveride;
+                    Caplock = !Caplock;
                     break;
                 default:
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -397,24 +419,26 @@ namespace FinalYearProjectDemo
                         layoutFile = "layout2.JSON";
                         layoutNum = 1;
                         updateLayout(1);
+                        label5.Text = "E T A O I N";
                     }
                     else
                     {
                         layoutFile = "layout.JSON";
                         layoutNum = 1;
                         updateLayout(1);
+                        label5.Text = "A B C D E F";
                     }
                     break;
                 default:
 
-                    if (layout != 4)
+                    if (layout == 3)
                     {
                         SendKeys.Send(" ");
                         currentWord = "";
                         break;
                     }
 
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -448,19 +472,23 @@ namespace FinalYearProjectDemo
                     updateLayout(11);
                     break;
                 case 14:
-                    if (radioButton1.Checked)
+                    if (Binarymode)
                     {
-                        changeMode(true);
-                        radioButton2.Checked = true;
+                        changeMode(false);
+                        Binarymode = false;
+                        label3.Text = "Eyetracker";
+
                     }
                     else
                     {
-                        changeMode(false);
-                        radioButton1.Checked = true;
+                        changeMode(true);
+                        Binarymode = true;
+                        label3.Text = "Binary Search";
+
                     }
                     break;
                 default:
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -496,7 +524,7 @@ namespace FinalYearProjectDemo
                     this.Close();
                     break;
                 default:
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -537,7 +565,7 @@ namespace FinalYearProjectDemo
                     break;
                 default:
 
-                    if (!CaplockActive(CaplockOveride))
+                    if (!Caplock)
                     {
                         String output = b.Text.ToLower();
                         SendKeys.Send(output);
@@ -569,7 +597,7 @@ namespace FinalYearProjectDemo
             if (mode)
             {
                 panel1.Visible = true;
-                KeyPreview = true;
+                
 
                 groupBox2.Enabled = false;
                 groupBox1.Enabled = false;
@@ -577,24 +605,13 @@ namespace FinalYearProjectDemo
             else
             {
                 panel1.Visible = false;
-                KeyPreview = false;
+                
 
                 groupBox2.Enabled = true;
                 groupBox1.Enabled = true;
             }
         }
 
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked)
-            {
-                changeMode(true);
-            }
-            else
-            {
-                changeMode(false);
-            }
-        }
 
         private void Button_MouseEnter(object sender, EventArgs e)
         {
@@ -733,23 +750,25 @@ namespace FinalYearProjectDemo
             {
                 SendKeys.Send("{BACKSPACE}");
             }
-            SendKeys.Send(b.Text);
-            SendKeys.Send(" ");
-            currentWord = "";
-            groupBox1.Visible = false;
-        }
 
-        public static bool CaplockActive(bool overide)
-        {
-            if (Control.IsKeyLocked(Keys.CapsLock) || (overide == true))
+            if (!Caplock)
             {
-                return true;
+                SendKeys.Send(b.Text);
+                currentWord = "";
+                currentWord += b.Text;
+
             }
             else
             {
-                return false;
+                SendKeys.Send(b.Text.ToUpper());
+                currentWord = "";
+                currentWord += b.Text;
             }
+            
+            groupBox1.Visible = false;
         }
+
+       
 
         class WordObj
         {
@@ -767,6 +786,11 @@ namespace FinalYearProjectDemo
 
             }
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
         }
     }
 
