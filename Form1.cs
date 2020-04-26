@@ -639,7 +639,7 @@ namespace FinalYearProjectDemo
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if ((e.Button == MouseButtons.Right) && (canClick) && (layout != 2))
+            if ((e.Button == MouseButtons.Right) && (canClick) && (layout != 2)&&(groupBox1.Enabled ==false))
             {
                 switch (highlightNum)
                 {
@@ -694,7 +694,7 @@ namespace FinalYearProjectDemo
                 }
 
             }
-            else if ((e.Button == MouseButtons.Right) && (canClick) && (layout == 2))
+            else if ((e.Button == MouseButtons.Right) && (canClick) && (layout == 2) && (groupBox2.Enabled == false))
             {
                 switch (highlightNum)
                 {
