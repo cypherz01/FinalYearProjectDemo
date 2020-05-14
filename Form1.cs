@@ -48,6 +48,7 @@ namespace FinalYearProjectDemo
         private int layout;
         private bool Caplock;
         private bool Binarymode;
+        private String path;
 
         // populating auto complete buttons
         public void populatePredictingWords(String currentWord)
@@ -83,8 +84,9 @@ namespace FinalYearProjectDemo
 
         public void loadFiles()
         {
-            layoutFile = "layout.JSON";
-            words = File.ReadAllLines("words.csv")
+            path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            layoutFile = path+"/layout.JSON";
+            words = File.ReadAllLines(path +"/words.csv")
             .Select(v => WordObj.FromCsv(v))
             .ToList();
         }
@@ -414,16 +416,16 @@ namespace FinalYearProjectDemo
                     updateLayout(10);
                     break;
                 case 14:
-                    if (layoutFile.Equals("layout.JSON"))
+                    if (layoutFile.Equals(path+"/layout.JSON"))
                     {
-                        layoutFile = "layout2.JSON";
+                        layoutFile = path+"/layout2.JSON";
                         layoutNum = 1;
                         updateLayout(1);
                         label5.Text = "E T A O I N";
                     }
                     else
                     {
-                        layoutFile = "layout.JSON";
+                        layoutFile = path +"/layout.JSON";
                         layoutNum = 1;
                         updateLayout(1);
                         label5.Text = "A B C D E F";
